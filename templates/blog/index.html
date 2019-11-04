@@ -1,5 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
+<! DOCTYPE html>
 <html>
 <head>
   <!-- title -->
@@ -76,11 +77,12 @@
         <div class="row">
             <main class="col-md-8">
 
+            {% block main %}
                 {% for post in post_list %}
                     <article class="post post-{{ post.pk }}">
                         <header class="entry-header">
                         <h1 class="entry-title">
-                            <a href="single.html">{{ post.title }}</a>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         </h1>
                         <div class="entry-meta">
                             <span class="post-category"><a href="#">{{ post.category.name }}</a></span>
@@ -94,7 +96,7 @@
                     <div class="entry-content clearfix">
                         <p>{{ post.excerpt }}</p>
                         <div class="read-more cl-effect-14">
-                            <a href="#" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
+                            <a href="{{ post.get_absolute_utl }}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
                         </div>
                     </div>
                     </article>
@@ -122,6 +124,7 @@
                         <li><a href="">11</a></li>
                     </ul>
                 </div>
+            {% endblock main %}
             </main>
             <aside class="col-md-4">
                 <div class="widget widget-recent-posts">
