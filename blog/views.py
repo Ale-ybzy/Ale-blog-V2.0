@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Post
+import markdown
+from markdown.extensions.toc import TocExtension
+import re
+from django.utils.text import slugify
 
 # Create your views here.
 '''
@@ -23,4 +27,15 @@ def index(request):
 #详情页视图函数
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    md = markdown.Markdown(extensions=[
+                              'markdown.extensions.extra',
+                              'markdown.extensions.codehilite',
+                               #'markdown.extensions.toc',
+                              TocExtension(slugify=slugify),
+                                  ])
+    post.body = md.convert(post.body)
+
+    m = re.search(r'<div class="toc">\s*<ul>(.*)</ul>\s*</div>', md.toc, re.S)
+    post.toc = m.group(1) if m is not None else ''
+
     return render(request, 'blog/detail.html', context={'post': post})

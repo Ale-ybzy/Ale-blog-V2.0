@@ -1,13 +1,14 @@
 {% load static %}
+
 <! DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
   <!-- title -->
   <title>野有蔓草，零露漙兮</title>
-  <link rel="shortcut" type="text/css" href="favicon.ico">
+  <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
 
   <!-- meta -->
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="keywords" content="技术、工作、生活、学习">
   <meta name="description" content="关于个人学习成长的博客，记录生活中点滴的进步、思考感悟、快乐悲伤，">
   <!-- 为移动设备添加视口 -->
@@ -20,26 +21,36 @@
   <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'blog/css/pace.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
+
+  <!-- 引入github主题代码高亮样式 -->
+  <!--
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/github.min.css">
+  -->
 
   <!-- js -->
   <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
   <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
   <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+
+
 </head>
 
 <body>
-<div class="container">
+<!--头部及导航栏-->
+<div class="navbar ">
     <header id="site-header">
-        <div class="row">
-            <div class="col-md-4 col-sm-5 col-xs-8">
-                <div class="logo">
-                    <h1><a href="index.html"><b>Black</b> &amp; White</a></h1>
+        <div class="row ">
+            <div class="col-md-4 col-sm-5 col-xs-8 ">
+                <div class="logo ">
+                    <h1><a href="{% url 'blog:index' %}">野有蔓草<br>零露漙兮</a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
-                <nav class="main-nav" role="navigation">
+                <nav class="main-nav " role="navigation">
                     <div class="navbar-header">
                         <button type="button" id="trigger-overlay" class="navbar-toggle">
                             <span class="ion-navicon"></span>
@@ -68,8 +79,6 @@
         </div>
     </header>
 </div>
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
-<div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
 
 <div class="content-body">
     <div class="container">
@@ -104,9 +113,6 @@
                         <li>
                             <a href="#">2017 年 4 月</a>
                         </li>
-                        <li>
-                            <a href="#">2017 年 3 月</a>
-                        </li>
                     </ul>
                 </div>
 
@@ -118,9 +124,6 @@
                         </li>
                         <li>
                             <a href="#">Python 教程 <span class="post-count">(11)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Django 用户认证 <span class="post-count">(8)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -134,30 +137,6 @@
                         <li>
                             <a href="#">Python</a>
                         </li>
-                        <li>
-                            <a href="#">Java</a>
-                        </li>
-                        <li>
-                            <a href="#">笔记</a>
-                        </li>
-                        <li>
-                            <a href="#">文档</a>
-                        </li>
-                        <li>
-                            <a href="#">AngularJS</a>
-                        </li>
-                        <li>
-                            <a href="#">CSS</a>
-                        </li>
-                        <li>
-                            <a href="#">JavaScript</a>
-                        </li>
-                        <li>
-                            <a href="#">Snippet</a>
-                        </li>
-                        <li>
-                            <a href="#">jQuery</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="rss">
@@ -167,18 +146,18 @@
         </div>
     </div>
 </div>
+<!--底部-->
 <footer id="site-footer">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="copyright">&copy 2017 - 采集自<a href="http://www.cssmoban.com/"
-                                                        target="_blank" title="模板之家">模板之家</a>
-                    - 由<a href="http://zmrenwu.com/" title="网页模板" target="_blank">追梦人物的博客</a>修改
+                <p class="copyright">&copy 2019 - <a >落霞与孤鹜齐飞，秋水共长天一色。</a>
                 </p>
             </div>
         </div>
     </div>
 </footer>
+
 
 <!-- Mobile Menu -->
 <div class="overlay overlay-hugeinc">
@@ -193,5 +172,14 @@
     </nav>
 </div>
 
+  <!-- 代码块效果js文件，等待页面加载完成后再加载此文件 -->
+  <!--
+  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+  </script>
+  -->
 </body>
 </html>
