@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
+import markdown
+from django.utils.html import strip_tags
 
 # Create your models here.
 #分类类
@@ -46,6 +48,19 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         self.modified_time = timezone.now()
+
+        # 首先实例化一个Markdown类，用于渲染body的文本
+        # 由于摘要并不需要生成文章目录，所以去掉了目录拓展
+        md = markdown.Markdown(extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+        ])
+
+        # 先将Markdown文本渲染成HTML文本
+        # strip_tags 去掉HTML文本的全部HTML标签
+        # 从文本摘取前60个字符赋给excerpt
+        self.excerpt = strip_tags(md.convert(self.body))[:82]
+
         super().save(*args, **kwargs)
 
     #自定义get_absolute_url方法生成文章自己的url
