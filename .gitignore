@@ -1,5 +1,5 @@
-venv/*
-.idea/*
-blog/__pycache__/*
+venv/
+.idea/
+blog/__pycache__/
 *.pyc
-backup/*
+backup/
