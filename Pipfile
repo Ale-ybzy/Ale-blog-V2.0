@@ -9,6 +9,9 @@ verify_ssl = true
 django = "==2.2.3"
 markdown = "*"
 gunicorn = "*"
+mysql-server = "*"
+mysql-client = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.6"

@@ -4,3 +4,4 @@ blog/__pycache__/
 *.pyc
 backup/
 db.sqlite3
+blogproject/settings.py
