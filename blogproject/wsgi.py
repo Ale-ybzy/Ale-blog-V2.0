@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blogproject.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blogproject.settings.production')  #线上运行配置文件
 
 application = get_wsgi_application()
