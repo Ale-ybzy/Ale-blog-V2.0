@@ -9,3 +9,24 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.ybzb.online']  #域名前加点表示允许该域名下的子域名访问
 
+#数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'OPTIONS':{
+            #'read_default_file': [os.path.join(BASE_DIR, 'venv\my.cnf')],
+            'read_default_file': '/etc/mysql/my.cnf',
+        },
+    }
+
+
+    # 'substitute': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': '****',
+    #     'USER': '****',
+    #     'PASSWORD': '****',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '3306',
+    # }
+}
