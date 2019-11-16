@@ -705,7 +705,7 @@ img {
     font-size: 16px;
     line-height: 100%;
     transition: 0.4s border-color linear;
-    border-radius: 25px;
+    border-radius: 12px;
 }
 
 .contact-form textarea,
@@ -716,9 +716,9 @@ img {
     padding: 15px 15px;
     font-size: 16px;
     line-height: 15px !important;
-    min-height: 183px;
+    min-height: 140px;
     transition: 0.4s border-color linear;
-    border-radius: 25px;
+    border-radius: 16px;
 }
 
 .contact-form input:focus,
@@ -860,11 +860,12 @@ img {
  * 12.0 - Comment
  */
 .comment-area {
-    padding: 0 0px 0;
+    padding: 0 2px 0;
 }
 
 .comment-form {
-    margin-top: 20px;
+    margin-top: 26px;
+    padding: 0 8px 0;
 }
 
 .comment-form .comment-btn {
@@ -966,3 +967,18 @@ img {
     text-align:center
     }
 .footer a,.footer a:hover{color:#999}
+
+/* 评论属性样式 */
+label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/*发表评论样式*/
+.h3 {
+    font-size: 24px;
+    font-weight: 545;
+}
