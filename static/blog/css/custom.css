@@ -110,9 +110,9 @@ img {
  */
 
 #site-header {
-    background-color: #828a40;
-    padding: 8px 14px;
-    margin-bottom: 0px;
+    background-color: #806536;
+    padding: 6px 18px;
+    margin-bottom: 8px;
     border-bottom: 1px solid #e7e7e7;
 }
 
@@ -224,29 +224,33 @@ img {
 
 .post {
     background: #fff;
-    padding: 30px 30px 0;
+    padding: 30px 38px 1;
+    font-weight: 600;
 }
 
 .entry-title {
     text-align: left;
-    font-size: 1.9em;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    padding: 10px 0px 0;
+    font-size: 1.7em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    padding: 0px 0px 0;
+    font-weight: 550;
 }
 
+/* 小字简介样式 */
 .entry-meta {
     text-align: left;
     color: #DDDDDD;
     font-size: 13px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
+/*文章字体样式*/
 .entry-content {
-    font-size: 18px;
-    line-height: 1.9;
-    font-weight: 300;
-    color: #000;
+    line-height: 30px;
+    color: #333333;
+    font-size: 16px !important;
+    margin-bottom: 46px;
 }
 
 .post-category::after,
@@ -264,20 +268,19 @@ img {
 .read-more {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
-    word-spacing: 1px;
+    word-spacing: -1px;
     letter-spacing: 0.01em;
-    text-align: left;
-    margin-top: 20px;
+    text-align: right;
+    margin-top: 8px;
 }
 
 .cl-effect-14 a {
     padding: 0 20px;
-    height: 45px;
     line-height: 45px;
     position: relative;
     display: inline-block;
-    margin: 15px 0px;
-    letter-spacing: 1px;
+    margin: 0px 0px;
+    letter-spacing: 0px;
     font-weight: 400;
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
 }
@@ -350,12 +353,12 @@ img {
 }
 
 .widget-title {
-    font-size: 1.5em;
+    font-size: 1.35em;
     margin-top: -22px;
     margin-bottom: 10px;
     line-height: 1.6;
     padding: 10px 0 0 15;
-    font-weight: 400;
+    font-weight: 800;
 }
 
 .widget-recent-posts ul {
@@ -702,7 +705,7 @@ img {
     font-size: 16px;
     line-height: 100%;
     transition: 0.4s border-color linear;
-    border-radius: 25px;
+    border-radius: 12px;
 }
 
 .contact-form textarea,
@@ -713,9 +716,9 @@ img {
     padding: 15px 15px;
     font-size: 16px;
     line-height: 15px !important;
-    min-height: 183px;
+    min-height: 140px;
     transition: 0.4s border-color linear;
-    border-radius: 25px;
+    border-radius: 16px;
 }
 
 .contact-form input:focus,
@@ -857,11 +860,12 @@ img {
  * 12.0 - Comment
  */
 .comment-area {
-    padding: 0 0px 0;
+    padding: 0 2px 0;
 }
 
 .comment-form {
-    margin-top: 20px;
+    margin-top: 26px;
+    padding: 0 8px 0;
 }
 
 .comment-form .comment-btn {
@@ -930,4 +934,51 @@ img {
     float: right!important;
     margin-right: -70px;
 }
+/*顶部导航栏*/
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 0;
+    border-width: 0 0 1px;
+}
+/*中部body*/
+.container {
+    padding-top: 80px;
+}
+/*详情页内容字体样式*/
+.news_txt {
+    line-height: 30px;
+    color: #333333;
+    font-size: 16px !important;
+    margin-bottom: 46px;
+    letter-spacing: 0.5px;
+}
 
+/*页脚*/
+.footer{
+    border-top:1px solid #E8E8E8;
+    padding:15px 0;
+    font-family:tahoma,Arial;
+    font-size:13px;
+    color:#999;
+    line-height:22px;
+    text-align:center
+    }
+.footer a,.footer a:hover{color:#999}
+
+/* 评论属性样式 */
+label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/*发表评论样式*/
+.h3 {
+    font-size: 24px;
+    font-weight: 545;
+}
