@@ -41,3 +41,9 @@
     </div>
   {% endif %}
 {% endblock toc %}
+
+{% block script %}
+<script>
+    $(".django-ckeditor-widget").removeAttr('style');
+</script>
+{% endblock script %}

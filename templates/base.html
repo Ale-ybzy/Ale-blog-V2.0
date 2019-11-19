@@ -31,6 +31,9 @@
   <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
   <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
 
+  <!--ckeditor代码高亮prism静态文件-->
+  <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
 </head>
 
@@ -141,5 +144,6 @@
     </nav>
 </div>
 
+{% block script %}{% endblock script %}
 </body>
 </html>
