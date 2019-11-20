@@ -5,6 +5,7 @@ import markdown
 from markdown.extensions.toc import TocExtension
 import re
 from django.utils.text import slugify
+from django.views.generic import ListView
 
 # Create your views here.
 '''
@@ -20,9 +21,17 @@ def index(request):
 '''
 
 #首页视图函数
+'''
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
+'''
+class IndexView(ListView):
+    model = Post
+    template_name = 'blog/index.html'
+    context_object_name = 'post_list'
+    # 指定 paginate_by 属性后开启分页功能，其值代表每一页包含多少篇文章
+    paginate_by = 8
 
 #详情页视图函数
 def detail(request, pk):
@@ -52,10 +61,17 @@ def archive(request, year, month):
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
 #分类页面视图
+'''
 def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list':post_list})
+'''
+class CategoryView(IndexView):
+    def get_queryset(self):
+        cate = get_object_or_404(Category, pk=self.kwargs.get('pk'))
+        return super(CategoryView, self).get_queryset().filter(category=cate)
+
 
 #标签页面视图
 def tag(request, pk):

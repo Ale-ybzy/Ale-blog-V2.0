@@ -7,4 +7,4 @@ db.sqlite3
 blogproject/settings.py
 fabfile.py
 _credentials.py
-static/
+
