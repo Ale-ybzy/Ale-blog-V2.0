@@ -1,0 +1,149 @@
+{% load static %}
+{% load blog_extras %}
+
+<! DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <!-- title -->
+  <title>Ale_blog</title>
+  <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
+
+  <!-- meta -->
+  <meta charset="UTF-8">
+  <meta name="keywords" content="技术、工作、生活、学习">
+  <meta name="description" content="关于个人学习成长的博客，记录生活中点滴的进步、思考感悟、快乐悲伤，">
+  <!-- 为移动设备添加视口 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <!-- 优先使用IE最新版和chrome -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/pace.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
+
+  <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
+  <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+
+  <!--ckeditor代码高亮prism静态文件-->
+  <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
+
+</head>
+
+<body>
+<!--头部及导航栏-->
+<div class="navbar navbar-fixed-top ">
+    <header id="site-header">
+        <div class="row ">
+            <div class="col-md-4 col-sm-5 col-xs-8 ">
+                <div class="logo ">
+                    <h1><a href="{% url 'blog:index' %}">野有蔓草<br>零露漙兮</a></h1>
+                </div>
+            </div><!-- col-md-4 -->
+
+            <!-- 导航栏右侧
+            <div class="col-md-8 col-sm-7 col-xs-4">
+                <nav class="main-nav " role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="trigger-overlay" class="navbar-toggle">
+                            <span class="ion-navicon"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <div id="header-search-box">
+                    <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
+                    <div id="search-form" class="search-form">
+                        <form role="search" method="get" id="searchform" action="#">
+                            <input type="search" placeholder="搜索" required>
+                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            -->
+
+        </div>
+    </header>
+
+    {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            {{ message }}
+          </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<!-- 中部body -->
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8">
+                {% block main %}
+                {% endblock main %}
+            </main>
+            <aside class="col-md-4">
+                {% block toc %}
+                {% endblock toc %}
+
+                <!-- 最新文章模板标签 -->
+                {% show_recent_posts %}
+                <!-- 归档模板标签 -->
+                {% show_archives %}
+                <!-- 分类模板标签 -->
+                {% show_categories %}
+                <!-- 标签模板标签 -->
+                {% show_tags %}
+                <!-- RSS订阅
+                <div class="rss">
+                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                </div>
+                -->
+            </aside>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<footer class="footer mt-20">
+	<div class="container-fluid">
+		<nav> <a href="#" target="_blank">百寒成冰</a> <span class="pipe">|</span> <a href="#" target="_blank">滴水穿石</a> <span class="pipe">|</span> <a href="#" target="_blank">聚沙成塔</a> </nav>
+		<p>Copyright &copy;2018-2019 Ale All Rights Reserved. <br>
+			<a href="http://www.beian.gov.cn/portal/recordQuery?token=f5d6abf1-2511-4d48-b105-30b3c68daf08" target="_blank" rel="nofollow"> 鲁ICP备18030501号-2</a><br>
+		</p>
+	</div>
+</footer>
+
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="{% url 'blog:index' %}">首页</a></li>
+            <li><a href="full-width.html">博客</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="contact.html">联系</a></li>
+        </ul>
+    </nav>
+</div>
+
+{% block script %}{% endblock script %}
+</body>
+</html>
