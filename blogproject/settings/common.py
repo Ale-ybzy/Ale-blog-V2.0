@@ -143,8 +143,8 @@ CKEDITOR_CONFIGS = {
     # django-ckeditor默认使用default配置
     'default': {
         # 编辑器宽度自适应
-        'width':'900px',
-        'height':'250px',
+        'width':'750px',
+        'height':'150px',
         # tab键转换空格数
         'tabSpaces': 4,
         # 工具栏风格

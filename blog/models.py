@@ -67,7 +67,7 @@ class Post(models.Model):
         # 先将Markdown文本渲染成HTML文本
         # strip_tags 去掉HTML文本的全部HTML标签
         # 从文本摘取前60个字符赋给excerpt
-        self.excerpt = strip_tags(md.convert(self.body))[:82]
+        self.excerpt = strip_tags(md.convert(self.body))[:100]
 
         super().save(*args, **kwargs)
 
