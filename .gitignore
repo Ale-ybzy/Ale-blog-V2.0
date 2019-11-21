@@ -1,0 +1,10 @@
+venv/
+.idea/
+blog/__pycache__/
+*.pyc
+backup/
+db.sqlite3
+blogproject/settings.py
+fabfile.py
+_credentials.py
+
