@@ -5,6 +5,7 @@ from django.urls import reverse
 import markdown
 from django.utils.html import strip_tags
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -36,7 +37,8 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField('标题', max_length=100)
     #body = models.TextField('正文')
-    body = RichTextField('正文')
+    #body = RichTextField('正文')
+    body = RichTextUploadingField('正文')
     created_time = models.DateTimeField('创建时间', default=timezone.now)
     modified_time = models.DateTimeField('修改时间')
     excerpt = models.CharField('摘要', max_length=200, blank=True)
