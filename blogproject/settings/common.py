@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig', #注册blog应用
     'comments.apps.CommentsConfig', #注册 comments 应用
     'ckeditor', #注册富文本应用
+    'ckeditor_uploader',  #图片上传应用
 
 ]
 MIDDLEWARE = [
@@ -135,8 +136,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#静态文件路径
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#图片上传路径
+MEDIA_URL = '/media/'
+# 放在django项目根目录，同时也需要创建media文件夹
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CKEDITOR_UPLOAD_PATH = 'upload/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
 
 # ckeditor编辑器配置
 CKEDITOR_CONFIGS = {
@@ -164,7 +173,9 @@ CKEDITOR_CONFIGS = {
             # 列表
             ['NumberedList', 'BulletedList'],
             # 最大化
-            ['Maximize']
+            ['Maximize'],
+            # 图片
+            ['Image'],
         ],
         # 加入代码块插件
         'extraPlugins': ','.join(['codesnippet']),

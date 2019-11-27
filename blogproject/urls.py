@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')), #使用include函数将blog下的urls文件包含进来
     path('', include('comments.urls')), #评论应用url文件
-]
+    path('ckeditor/', include('ckeditor_uploader.urls')), #图片上传
+]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

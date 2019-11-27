@@ -54,20 +54,38 @@ def detail(request, pk):
     return render(request, 'blog/detail.html', context={'post': post})
 
 #归档页面视图
+
 def archive(request, year, month):
     post_list = Post.objects.filter(created_time__year=year,  #Python 中调用属性的方式通常是 created_time.year，但是由于这里作为方法的参数列表，所以 django 要求我们把点替换成了两个下划线，即 created_time__year
                                     created_time__month=month
                                     ).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
+class ArchivesView(ListView):
+    model = Post
+    template_name = 'blog/index.html'
+    context_object_name = 'post_list'
+
+    def get_queryset(self):
+        year = self.kwargs.get('year')
+        month = self.kwargs.get('month')
+        return super(ArchivesView, self).get_queryset().filter(created_time__year=year,
+                                                               created_time__month=month
+                                                               )
+
 #分类页面视图
-'''
+
 def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list':post_list})
-'''
-class CategoryView(IndexView):
+
+
+class CategoryView(ListView):
+    model = Post
+    template_name = 'blog/index.html'
+    context_object_name = 'post_list'
+
     def get_queryset(self):
         cate = get_object_or_404(Category, pk=self.kwargs.get('pk'))
         return super(CategoryView, self).get_queryset().filter(category=cate)
