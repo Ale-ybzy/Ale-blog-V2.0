@@ -146,6 +146,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
 
 # ckeditor编辑器配置
 CKEDITOR_CONFIGS = {

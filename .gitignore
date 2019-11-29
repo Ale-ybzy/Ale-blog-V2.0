@@ -9,4 +9,8 @@ fabfile.py
 _credentials.py
 Pipfile
 Pipfile.lock
+<<<<<<< HEAD
 media/
+=======
+media/
+>>>>>>> 07bf40648b76216bd269c6431b9ca940889b3234
