@@ -9,3 +9,4 @@ fabfile.py
 _credentials.py
 Pipfile
 Pipfile.lock
+media/

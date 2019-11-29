@@ -110,7 +110,7 @@ img {
  */
 
 #site-header {
-    background-color: #806536;
+    background-color: #4c494d;
     padding: 6px 18px;
     margin-bottom: 8px;
     border-bottom: 1px solid #e7e7e7;
@@ -910,9 +910,12 @@ img {
  * 13.0 - Pagination
  */
 .pagination-simple {
-    padding-left: 30px;
-    font-size: 17px;
-    padding-top: 26px
+    padding-left: 29px;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
 }
 
 .pagination ul {
@@ -963,7 +966,7 @@ img {
     border-top:1px solid #E8E8E8;
     padding:15px 0;
     font-family:tahoma,Arial;
-    font-size:13px;
+    font-size:14px;
     color:#999;
     line-height:22px;
     text-align:center
