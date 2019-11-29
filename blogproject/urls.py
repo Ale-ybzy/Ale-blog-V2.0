@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('comments.urls')), #评论应用url文件
     path('ckeditor/', include('ckeditor_uploader.urls')), #图片上传
 ]
+#urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)
 urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)
