@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'comments.apps.CommentsConfig', #注册 comments 应用
     'ckeditor', #注册富文本应用
     'ckeditor_uploader',  #图片上传应用
+    'userprofile',
 
 ]
 MIDDLEWARE = [

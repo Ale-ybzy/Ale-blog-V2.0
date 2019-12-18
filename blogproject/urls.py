@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')), #使用include函数将blog下的urls文件包含进来
     path('', include('comments.urls')), #评论应用url文件
-    path('ckeditor/', include('ckeditor_uploader.urls')), #图片上传
+    path('ckeditor/', include('ckeditor_uploader.urls')), #
+    path('userprofile/', include('userprofile.urls', namespace='userprofile')), #用户管理
 ]
 #urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)
 urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)

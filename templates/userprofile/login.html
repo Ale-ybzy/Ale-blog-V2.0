@@ -115,36 +115,32 @@
 </div>
 
 <!-- 中部body -->
-<div class="content-body">
-    <div class="container">
-        <div class="row">
-            <main class="col-md-8">
-                {% block main %}
-                {% endblock main %}
-            </main>
-
-            <aside class="col-md-4">
-                {% block toc %}
-                {% endblock toc %}
-                <!-- 最新文章模板标签 -->
-                {% show_recent_posts %}
-                <!-- 归档模板标签 -->
-                {% show_archives %}
-                <!-- 分类模板标签 -->
-                {% show_categories %}
-                <!-- 标签模板标签 -->
-                {% show_tags %}
-                <!-- RSS订阅
-                <div class="rss">
-                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+<!-- 用户登录 -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form method="post" action=".">
+                {% csrf_token %}
+                <!-- 账号 -->
+                <div class="form-group">
+                    <label for="username">账号</label>
+                    <input type="text" class="form-control" id="username" name="username">
                 </div>
-                -->
-            </aside>
-
+                <!-- 密码 -->
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
         </div>
     </div>
 </div>
+
 <!--底部-->
+
 <footer class="footer mt-20">
 	<div class="container-fluid">
         <!--

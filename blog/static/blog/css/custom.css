@@ -157,12 +157,13 @@ img {
 }
 
 .main-nav a {
-    color: #fbfafa !important;
+    color: #333 !important;
     padding: 2 0 5px 0 !important;
     margin-right: 30px;
     font-family: STXingkai;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1.2;
 }
 
 .main-nav a:active,
@@ -489,7 +490,7 @@ img {
 
 #header-search-box {
     position: absolute;
-    right: 333px;
+    right: 93px;
     top: 12px;
 }
 
@@ -504,7 +505,7 @@ img {
 
 #search-menu span {
     font-size: 20px;
-    color: #f9fafb;
+    color: #8a6d3b;
 }
 
 #searchform {
@@ -938,7 +939,7 @@ img {
  */
 .navbar-right {
     float: right!important;
-    margin-right: -70px;
+    margin-right: 50px;
 }
 /*顶部导航栏*/
 .navbar-fixed-top {
@@ -988,3 +989,14 @@ label{
     font-size: 24px;
     font-weight: 545;
 }
+
+/*用户登录*/
+.nav-link {
+    position: absolute;
+    right: 33px;
+    top: 9px;
+    margin: 5px 0px 0px 0px;
+    font-family: STXingkai;
+    font-size: 20px;
+}
+
