@@ -1000,3 +1000,19 @@ label{
     font-size: 20px;
 }
 
+.form-control {
+    width: 20%;
+}
+
+.login {
+    margin: 120px 20px 190px 400px;
+}
+
+.login_in {
+    margin: 10px 10px 10px 10px;
+}
+/*登录按钮*/
+.btn-primary {
+    background-color: #8a6d3b;
+    border-color: #8a6d3b;
+}
