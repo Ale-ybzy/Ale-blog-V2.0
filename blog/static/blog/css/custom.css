@@ -999,6 +999,15 @@ label{
     font-family: STXingkai;
     font-size: 20px;
 }
+.nav-link-name {
+    position: absolute;
+    right: 33px;
+    top: 0px;
+    margin: 0px 0px 0px 0px;
+    /* font-family: STXingkai; */
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+    font-size: 18px;
+}
 
 .form-control {
     width: 20%;
@@ -1008,11 +1017,33 @@ label{
     margin: 120px 20px 190px 400px;
 }
 
-.login_in {
+.login-in {
     margin: 10px 10px 10px 10px;
 }
 /*登录按钮*/
 .btn-primary {
     background-color: #8a6d3b;
     border-color: #8a6d3b;
+}
+
+/*退出登录*/
+.dropdown-menu {
+position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 100px;
+    padding: 5px 0;
+    margin: 50px 420 0;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.dropdown-item {
+    margin: 0px 0px 0px 0px;
 }
