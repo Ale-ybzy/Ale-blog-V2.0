@@ -22,11 +22,21 @@
     </article>
     <section class="comment-area" id="comment-area">
         <hr>
-        <h3>发表评论</h3>
-        {% show_comment_form post %}
-        <div class="comment-list-panel">
-             {% show_comments post %}
-        </div>
+        <h3 class="entry-title">发表评论</h3>
+        {% if user.is_authenticated %}
+        <dev>
+            {% show_comment_form post %}
+        {% else %}
+            <br>
+            <h5 class="row justify-content-center">
+                请<a href="{% url 'userprofile:login' %}">登录</a>后回复
+            </h5>
+            <br>
+        {% endif %}
+            <div class="comment-list-panel">
+            {% show_comments post %}
+            </div>
+        </dev>
     </section>
 {% endblock main %}
 

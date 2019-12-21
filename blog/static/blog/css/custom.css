@@ -236,7 +236,7 @@ img {
     margin-bottom: 15px;
     line-height: 1.5;
     padding: 0px 0px 0;
-    font-weight: 450;
+    font-weight: 460;
 }
 
 /* 小字简介样式 */
@@ -1048,4 +1048,15 @@ position: absolute;
 }
 .dropdown-item {
     margin: 0px 0px 0px 0px;
+}
+
+/* 评论样式 */
+.justify-content-center {
+    font-size:14px;
+    margin:0px 0px 0px 0px;
+}
+
+.comment-list {
+    font-size:14px;
+    margin:10px 0px 0px 0px;
 }
