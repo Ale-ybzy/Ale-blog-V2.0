@@ -1004,9 +1004,11 @@ label{
     right: 33px;
     top: 0px;
     margin: 0px 0px 0px 0px;
-    /* font-family: STXingkai; */
+    font-family: STXingkai;
+    /*
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
-    font-size: 18px;
+    */
+    font-size: 20px;
 }
 
 .form-control {
@@ -1035,7 +1037,7 @@ position: absolute;
     float: left;
     min-width: 100px;
     padding: 5px 0;
-    margin: 50px 420 0;
+    margin: 30px 780 0;
     font-size: 14px;
     text-align: left;
     background-color: #fff;
