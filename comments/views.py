@@ -25,7 +25,8 @@ def comment(request, post_pk):
 
         # 将评论和被评论的文章关联起来。
         comment.post = post
-
+        # 将评论和评论者关联起来。
+        comment.name = request.user
         # 最终将评论数据保存进数据库，调用模型实例的 save 方法
         comment.save()
 
