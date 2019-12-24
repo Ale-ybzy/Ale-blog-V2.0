@@ -1060,3 +1060,9 @@ position: absolute;
     font-size:14px;
     margin:10px 0px 0px 0px;
 }
+
+/*用户注册*/
+.register-login {
+    font-size:33px;
+    margin:10px 0px 0px 400px;
+}
