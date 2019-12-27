@@ -9,7 +9,7 @@ class Comment(models.Model):
     #name = models.CharField('名字', max_length=50)
     name = models.ForeignKey(User, verbose_name='用户名', on_delete=models.CASCADE)
     email = models.EmailField('邮箱', blank=True)
-    #email = models.ForeignKey(User.email, verbose_name='邮箱', on_delete=models.CASCADE)
+    #email = models.ForeignKey(User, verbose_name='邮箱', on_delete=models.CASCADE)
     url = models.URLField('网址', blank=True)
     text = RichTextField('内容')
     created_time = models.DateTimeField('创建时间', default=timezone.now)

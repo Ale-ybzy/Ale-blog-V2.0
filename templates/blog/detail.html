@@ -28,8 +28,8 @@
             {% show_comment_form post %}
         {% else %}
             <br>
-            <h5 class="row justify-content-center">
-                请<a href="{% url 'userprofile:login' %}">登录</a>后回复
+            <h5 class="justify-content-center">
+                请<a class="login-button" href="{% url 'userprofile:login' %}">登录</a>后回复
             </h5>
             <br>
         {% endif %}
