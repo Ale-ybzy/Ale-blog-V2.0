@@ -6,7 +6,7 @@
         <!--
         <a href="{% url 'blog:archive' date.year date.month %}">
          -->
-        <a href="#">
+        <a href="{% url 'blog:archive' date.year date.month %}">
           {{ date.year }} 年 {{ date.month }} 月</a>
       </li>
     {% empty %}

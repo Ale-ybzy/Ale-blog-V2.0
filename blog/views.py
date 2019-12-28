@@ -56,8 +56,8 @@ def detail(request, pk):
 #归档页面视图
 
 def archive(request, year, month):
-    post_list = Post.objects.filter(created_time__year=year,  #Python 中调用属性的方式通常是 created_time.year，但是由于这里作为方法的参数列表，所以 django 要求我们把点替换成了两个下划线，即 created_time__year
-                                    created_time__month=month
+    post_list = Post.objects.filter(created_time__year=year,
+                                    created_time__month=month,
                                     ).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
@@ -78,7 +78,7 @@ class ArchivesView(ListView):
 def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate).order_by('-created_time')
-    return render(request, 'blog/index.html', context={'post_list':post_list})
+    return render(request, 'blog/index.html', context={'post_list': post_list})
 
 
 class CategoryView(ListView):
