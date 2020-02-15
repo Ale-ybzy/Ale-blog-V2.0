@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Post, Category, Tag
 import markdown
@@ -6,6 +7,7 @@ from markdown.extensions.toc import TocExtension
 import re
 from django.utils.text import slugify
 from django.views.generic import ListView
+from django.contrib import messages
 
 # Create your views here.
 '''
@@ -96,3 +98,15 @@ def tag(request, pk):
     t = get_object_or_404(Tag, pk=pk)
     post_list = Post.objects.filter(tag=t).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
+
+#文章搜索视图函数
+def search(request):
+    q = request.GET.get('q')
+
+    if not q:
+        error_msg = "请输入搜索关键词"
+        messages.add_message(request, messages.ERROR, error_msg, extra_tags='danger')
+        return redirect('blog:index')
+
+    post_list = Post.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
+    return render(request, 'blog/index.html', {'post_list': post_list})

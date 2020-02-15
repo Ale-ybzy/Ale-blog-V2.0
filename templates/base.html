@@ -9,9 +9,9 @@
   <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
 
   <!-- meta -->
-  <meta charset="UTF-8">
+  <meta http-equiv="content-Type" charset="UTF-8">
   <meta name="keywords" content="阿乐博客、Ale、野有蔓草零露漙兮">
-  <meta name="description" content="不积跬步无以至千里，不积小流无以成江河，详细记录成长过程中的每一份收获。">
+  <meta name="description" content="不积跬步无以至千里，不积小流无以成江河，记录成长过程中的点滴收获。">
   <!-- 为移动设备添加视口 -->
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
   <!-- 优先使用IE最新版和chrome -->
@@ -35,75 +35,85 @@
   <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
   <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
+    <style>
+        *{
+	  margin:0;
+	  padding:0;
+	}
+		a{
+	  text-decoration:none;
+	}
+    </style>
+
 </head>
 
 <body>
 <!--头部及导航栏-->
-<div class="navbar navbar-fixed-top ">
+<div class="head-navbar">
     <header id="site-header">
-        <div class="row ">
-            <div class="col-md-4 col-sm-5 col-xs-8 ">
+        <div class="external">
+
+            <div class="logo-box">
                 <div class="logo ">
                     <h1><a href="{% url 'blog:index' %}">野有蔓草<br>&nbsp;&nbsp;零露漙兮</a></h1>
                 </div>
-            </div><!-- col-md-4 -->
+            </div>
 
-
-            <div class="col-md-8 col-sm-7 col-xs-4">
+            <div class="nav-right">
                 <nav class="main-nav " role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" id="trigger-overlay" class="navbar-toggle">
-                            <span class="ion-navicon"></span>
-                        </button>
-                    </div>
-                    <!--
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="#"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
-                            <li class="#"><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li class="#"><a href="about.html" data-hover="关于">关于</a></li>
-                            <li class="#"><a href="contact.html" data-hover="联系">联系</a></li>
-                            -->
-                            <!--
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
-                            --><!--
+
+<!--                    <div class="navbar-header">-->
+<!--                        <button type="button" id="trigger-overlay" class="navbar-toggle">-->
+<!--                            <span class="ion-navicon"></span>-->
+<!--                        </button>-->
+<!--                    </div>-->
+
+                    <div class="navbar-list">
+                            <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+                            <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>
+                            <a href="history.html" data-hover="脚印">脚印</a></li>
+                            <a href="about.html" data-hover="自述">自述</a></li>
+
                         </ul>
-                    </div>-->
+                    </div>
                 </nav>
 
-                <!--
-                <div id="header-search-box">
-                    <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
-                    <div id="search-form" class="search-form">
-                        <form role="search" method="get" id="searchform" action="#">
-                            <input type="search" placeholder="搜索" required>
-                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+
+                <div class="search-box">
+                        <form role="search" method="get" action="{% url 'blog:search' %}">
+                            <div id="searchform">
+                                <input type="search" name="q" placeholder="搜索" required>
+                            </div>
+                            <div class="squair-box">
+                                <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                            </div>
                         </form>
-                    </div>
                 </div>
+
             </div>
-            -->
+
 
             <!-- Django的 if 模板语句 -->
             {% if user.is_authenticated %}
                 <!-- 如果用户已经登录，则显示用户名下拉框 -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link-name dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      {{ user.username }}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
-                    </div>
-                </li>
+                <div class="login-registar">
+                    <li class="nav-item">
+                        <a class="nav-link-name dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
+                        </div>
+                    </li>
+                </div>
             <!-- 如果用户未登录，则显示 “登录” -->
             {% else %}
-                <dev class="nav-item">
+                <div class="login-registar">
                     <a class="nav-link" href="{% url 'userprofile:login' %}">登录</a>
-                </dev>
+                </div>
             <!-- if 语句在这里结束 -->
             {% endif %}
 
-            </div>
         </div>
     </header>
 
@@ -120,8 +130,8 @@
 
 <!-- 中部body -->
 <div class="content-body">
-    <div class="container">
-        <div class="row">
+    <div class="content-box">
+        <div class="content-row">
             <main class="col-md-8">
                 {% block main %}
                 {% endblock main %}

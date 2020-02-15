@@ -13,5 +13,5 @@ urlpatterns = [
     #path('categories/<int:pk>/', views.category, name='category'), #分类页
     path('categories/<int:pk>/', views.CategoryView.as_view(), name='category'),#分类页
     path('tags/<int:pk>/', views.tag, name='tag'),  #标签页
-
+    path('search/', views.search, name='search'),  #搜索页
 ]
