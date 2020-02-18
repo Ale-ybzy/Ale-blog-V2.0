@@ -71,8 +71,9 @@
                     <div class="navbar-list">
                             <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
                             <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>
+                            <a href="about.html" data-hover="时光册 ">时光册</a></li>
                             <a href="history.html" data-hover="脚印">脚印</a></li>
-                            <a href="about.html" data-hover="自述">自述</a></li>
+
 
                         </ul>
                     </div>
@@ -131,13 +132,12 @@
 <!-- 中部body -->
 <div class="content-body">
     <div class="content-box">
-        <div class="content-row">
-            <main class="col-md-8">
+            <div class="content-left">
                 {% block main %}
                 {% endblock main %}
-            </main>
+            </div>
 
-            <aside class="col-md-4">
+            <div class="content-right">
                 {% block toc %}
                 {% endblock toc %}
                 <!-- 最新文章模板标签 -->
@@ -153,18 +153,21 @@
                     <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
                 </div>
                 -->
-            </aside>
+            </div>
 
-        </div>
     </div>
 </div>
-<!--底部-->
-<footer class="footer mt-20">
-	<div class="container-fluid">
-        <!--
-		<nav> <a href="#" target="_blank">百寒成冰</a> <span class="pipe">|</span> <a href="#" target="_blank">滴水穿石</a> <span class="pipe">|</span> <a href="#" target="_blank">聚沙成塔</a> </nav>
-		-->
-		<p>Copyright &copy;2018-2019 Ale All Rights Reserved. <br>
+
+<!-------footer底部------>
+
+<footer class="footer-box">
+    <div class="white">
+    </div>
+	<div class="footer-nav">
+		<nav> <a href="#" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span class="pipe">|</span> <a href="#" target="_blank">友情链接</a> </nav>
+    </div>
+    <div class="footer-nav2">
+		<p>Copyright &copy;2018-2020 Ale All Rights Reserved. <br>
 			<a href="http://www.beian.gov.cn/portal/recordQuery?token=f5d6abf1-2511-4d48-b105-30b3c68daf08" target="_blank" rel="nofollow"> 鲁ICP备18030501号-2</a><br>
 		</p>
 	</div>

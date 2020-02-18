@@ -332,7 +332,6 @@ img {
     float:right;
     width:200px;
     height:60px;
-    margin-top:15px;
     margin-right:50px;
 }
 
@@ -341,6 +340,7 @@ img {
     float:left;
     width:145px;
     height:33px;
+    margin-top:15px;
 }
 
 .squair-box {
@@ -348,6 +348,7 @@ img {
     float:right;
     width:33px;
     height:33px;
+    margin-top:15px;
     margin-right:22px;
 }
 
@@ -405,6 +406,11 @@ img {
     width:30px;
     height:26px;
 }
+.squair-box button span:hover {
+    font-size:23px;
+    color:white;
+}
+
 
 /**
  * 3.2.1 - Main Nav CSS 3 Hover Effect
@@ -442,36 +448,42 @@ img {
  */
 
 .content-body {
-    padding-bottom: 4em;
+    padding-top:72px;
+    background-color: lightgrey;
 }
 
 .content-box {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 80px;
-    width: 1170px;
+
+    margin: 0 auto;
+    width:1144px;
+    height: auto!important;
+    overflow: hidden;
 }
 
-.content-row {
-    margin-right: -15px;
-    margin-left: -15px;
+.content-left {
+    float:left;
+    width:788px;
+    margin:0px 5px 2px 5px;
+    background-color: white;
+
 }
+
+.content-right {
+    width: 333px;
+    float:right;
+    background-color: white;
+}
+
 
 .post {
-    background: #fff;
     padding: 30px 38px 1;
-    font-weight: 450;
 }
 
 .entry-title {
     text-align: left;
-    font-size: 1.65em;
-    margin-bottom: 15px;
-    line-height: 1.5;
-    padding: 0px 0px 0;
-    font-weight: 460;
+    font-size: 1.63em;
+    margin-bottom: 10px;
+    font-weight: 449;
 }
 
 /* 小字简介样式 */
@@ -479,16 +491,20 @@ img {
     text-align: left;
     color: #DDDDDD;
     font-size: 13px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /*文章字体样式*/
 .entry-content {
-    line-height: 30px;
+    line-height: 26px;
     color: #333333;
     font-size: 16px !important;
-    margin-bottom: 46px;
-    padding-top: 0px;
+    padding-top: 4px;
+}
+
+.entry-content p{
+    margin:0 0 0 0;
+    letter-spacing:0.1px;
 }
 
 .post-category::after,
@@ -498,6 +514,121 @@ img {
     content: ' ·';
     color: #000;
 }
+
+/**
+ * 12.0 - Comment
+ */
+.comment-area {
+    padding: 30px 38px 1;
+}
+
+.comment-form {
+    margin-top: 26px;
+    padding: 0 8px 0;
+}
+
+.comment-form .comment-btn {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 22px 0px 0px;
+}
+
+.comment-list-panel {
+    margin-top: 30px;
+}
+
+.comment-list {
+    margin-top: 15px;
+}
+
+.comment-item:not(:last-child) {
+    border-bottom: 1px #ccc solid;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.comment-item .nickname,
+.comment-item .submit-date {
+    color: #777;
+    font-size: 14px;
+}
+
+.comment-item .nickname:after {
+    content: ' ·';
+}
+
+.comment-item .text {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+/**
+ * 6.0 - Footer
+ */
+.footer-box{
+    clear:both;
+    margin:0 auto;
+    background-color: #808000;
+/*    border-top:1px solid #E8E8E8;
+    padding:15px 0;
+    font-family:tahoma,Arial;
+    font-size:14px;
+    color:#999;
+    line-height:22px;
+    text-align:center  */
+    }
+
+.white{
+    height:8px;
+    background-color:lightgrey;
+}
+
+.footer-nav{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.footer-nav2{
+    margin-top: 2px;
+    text-align: center;
+    line-height:20px;
+}
+
+.footer-nav a{
+    letter-spacing:1px;
+    color:#ccc;
+}
+
+.footer-nav2 p{
+    letter-spacing:1px;
+    color:#ccc;
+    margin:0 0;
+}
+.footer-nav2 a{
+    letter-spacing:1px;
+    color:#ccc;
+}
+
+
+.footer a,.footer a:hover{color:#999}
+
+
+#site-footer {
+    padding-top: 10px;
+    padding: 0 0 1.5em 0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1em;
+    margin: 0;
+    border-top: 1px solid #eee;
+    color: #ccc;
+    font-size: 1.2em;
+}
+
 
 /**
  * 4.1 - Read More Button CSS 3 style
@@ -699,24 +830,6 @@ img {
 
 .rss a {
     color: #444;
-}
-
-/**
- * 6.0 - Footer
- */
-
-#site-footer {
-    padding-top: 10px;
-    padding: 0 0 1.5em 0;
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 1em;
-    margin: 0;
-    border-top: 1px solid #eee;
-    color: #020202;
-    font-size: 1.2em;
 }
 
 
@@ -1035,54 +1148,6 @@ img {
     }
 }
 
-/**
- * 12.0 - Comment
- */
-.comment-area {
-    padding: 0 2px 0;
-}
-
-.comment-form {
-    margin-top: 26px;
-    padding: 0 8px 0;
-}
-
-.comment-form .comment-btn {
-    background-color: #fff;
-    border: 1px solid #aaa;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin: 22px 0px 0px;
-}
-
-.comment-list-panel {
-    margin-top: 30px;
-}
-
-.comment-list {
-    margin-top: 15px;
-}
-
-.comment-item:not(:last-child) {
-    border-bottom: 1px #ccc solid;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
-.comment-item .nickname,
-.comment-item .submit-date {
-    color: #777;
-    font-size: 14px;
-}
-
-.comment-item .nickname:after {
-    content: ' ·';
-}
-
-.comment-item .text {
-    padding-top: 5px;
-    font-size: 16px;
-}
 
 /**
  * 13.0 - Pagination
@@ -1131,17 +1196,6 @@ img {
     letter-spacing: 0.5px;
 }
 
-/*页脚*/
-.footer{
-    border-top:1px solid #E8E8E8;
-    padding:15px 0;
-    font-family:tahoma,Arial;
-    font-size:14px;
-    color:#999;
-    line-height:22px;
-    text-align:center
-    }
-.footer a,.footer a:hover{color:#999}
 
 /* 评论属性样式 */
 label{
