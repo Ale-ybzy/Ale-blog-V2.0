@@ -1,60 +1,62 @@
 {% extends 'base.html' %}
 {% load comments_extras %}
 
-{% block toc %}
-  {% if post.toc %}
-    <div class="widget widget-content">
-        <h3 class="widget-title">文章目录</h3>
-            <div class="toc">
-                    <ul>
-                {{ post.toc | safe }}
-                    </ul>
-           </div>
-    </div>
-  {% endif %}
-{% endblock toc %}
 
 {% block main %}
-    <div class="post post-{{ post.pk }}">
-        <header class="entry-header">
-            <h1 class="entry-title">{{ post.title }}</h1>
-            <div class="entry-meta">
-                <span class="post-category"><a href="#">{{ post.category.name }}</a></span>
-                <span class="post-date"><a href="#"><time class="entry-date"
-                                                          datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
-                <span class="post-author"><a href="#">{{ post.author }}</a></span>
-                <span class="comments-link"><a href="{{ post.get_absolute_url }}">{{ post.comment_set.count }} 评论</a></span>
-                <span class="views-count"><a href="{{ post.get_absolute_url }}">{{ post.views }} 阅读</a></span>
-            </div>
-        </header>
-        <!-- 文章详情 -->
-        <div class="entry-content">
-            {{ post.body|safe }}
+<article class="post post-{{ post.pk }}">
+    <header class="entry-header">
+        <h1 class="entry-title">{{ post.title }}</h1>
+        <div class="entry-meta">
+            <span class="post-category"><a href="#">{{ post.category.name }}</a></span>
+            <span class="post-date"><a href="#"><time class="entry-date"
+                                                      datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
+            <span class="post-author"><a href="#">{{ post.author }}</a></span>
+            <span class="comments-link"><a href="{{ post.get_absolute_url }}">{{ post.comment_set.count }} 评论</a></span>
+            <span class="views-count"><a href="{{ post.get_absolute_url }}">{{ post.views }} 阅读</a></span>
         </div>
+    </header>
+    <!-- 文章详情 -->
+    <div class="entry-content clearfix">
+        {{ post.body|safe }}
     </div>
-    <div class="comment-area">
-        <hr>
-        <h3 class="entry-title">发表评论</h3>
-        {% if user.is_authenticated %}
-        <div>
-            {% show_comment_form post %}
+</article>
+<section class="comment-area" id="comment-area">
+    <hr>
+    <h3 class="entry-title">发表评论</h3>
+    {% if user.is_authenticated %}
+    <dev>
+        {% show_comment_form post %}
         {% else %}
-            <br>
-            <h5 class="justify-content-center">
-                请<a class="login-button" href="{% url 'userprofile:login' %}">登录</a>后回复
-            </h5>
-            <br>
+        <br>
+        <h5 class="justify-content-center">
+            请<a class="login-button" href="{% url 'userprofile:login' %}">登录</a>后回复
+        </h5>
+        <br>
         {% endif %}
-            <div class="comment-list-panel">
+        <div class="comment-list-panel">
             {% show_comments post %}
-            </div>
         </div>
-    </div>
+    </dev>
+</section>
 {% endblock main %}
-
 
 {% block script %}
 <script>
     $(".django-ckeditor-widget").removeAttr('style');
+
 </script>
 {% endblock script %}
+
+<!--
+{% block toc %}
+{% if post.toc %}
+<div class="widget widget-content">
+    <h3 class="widget-title">文章目录</h3>
+    <div class="toc">
+        <ul>
+            {{ post.toc | safe }}
+        </ul>
+    </div>
+</div>
+{% endif %}
+{% endblock toc %}-- >

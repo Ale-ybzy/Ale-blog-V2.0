@@ -4,46 +4,36 @@
 <! DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  <!-- title -->
-  <title>Ale_blog</title>
-  <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
+    <!-- title -->
+    <title>Ale_blog</title>
+    <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
 
-  <!-- meta -->
-  <meta http-equiv="content-Type" charset="UTF-8">
-  <meta name="keywords" content="阿乐博客、Ale、野有蔓草零露漙兮">
-  <meta name="description" content="不积跬步无以至千里，不积小流无以成江河，记录成长过程中的点滴收获。">
-  <!-- 为移动设备添加视口 -->
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-  <!-- 优先使用IE最新版和chrome -->
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="技术、工作、生活、学习">
+    <meta name="description" content="关于个人学习成长的博客，记录生活中点滴的进步、思考感悟、快乐悲伤，">
+    <!-- 为移动设备添加视口 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 优先使用IE最新版和chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-  <!-- css -->
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/pace.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/pace.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
 
-  <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
-  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-  <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
-  <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
 
-  <!--ckeditor代码高亮prism静态文件-->
-  <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
-  <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
-
-    <style>
-        *{
-	  margin:0;
-	  padding:0;
-	}
-		a{
-	  text-decoration:none;
-	}
-    </style>
+    <!--ckeditor代码高亮prism静态文件-->
+    <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
 </head>
 
@@ -62,56 +52,52 @@
             <div class="nav-right">
                 <nav class="main-nav " role="navigation">
 
-<!--                    <div class="navbar-header">-->
-<!--                        <button type="button" id="trigger-overlay" class="navbar-toggle">-->
-<!--                            <span class="ion-navicon"></span>-->
-<!--                        </button>-->
-<!--                    </div>-->
+                    <!--                    <div class="navbar-header">-->
+                    <!--                        <button type="button" id="trigger-overlay" class="navbar-toggle">-->
+                    <!--                            <span class="ion-navicon"></span>-->
+                    <!--                        </button>-->
+                    <!--                    </div>-->
 
                     <div class="navbar-list">
-                            <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
-                            <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>
-                            <a href="about.html" data-hover="时光册 ">时光册</a></li>
-                            <a href="history.html" data-hover="脚印">脚印</a></li>
-
-
-                        </ul>
+                        <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+                        <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>
+                        <a href="about.html" data-hover="时光册 ">时光册</a></li>
+                        <a href="history.html" data-hover="脚印">脚印</a></li>
                     </div>
                 </nav>
 
-
                 <div class="search-box">
-                        <form role="search" method="get" action="{% url 'blog:search' %}">
-                            <div id="searchform">
-                                <input type="search" name="q" placeholder="搜索" required>
-                            </div>
-                            <div class="squair-box">
-                                <button type="submit"><span class="ion-ios-search-strong"></span></button>
-                            </div>
-                        </form>
+                    <form role="search" method="get" action="{% url 'blog:search' %}">
+                        <div id="searchform">
+                            <input type="search" name="q" placeholder="搜索" required>
+                        </div>
+                        <div class="squair-box">
+                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                        </div>
+                    </form>
                 </div>
-
             </div>
 
 
             <!-- Django的 if 模板语句 -->
             {% if user.is_authenticated %}
-                <!-- 如果用户已经登录，则显示用户名下拉框 -->
-                <div class="login-registar">
-                    <li class="nav-item">
-                        <a class="nav-link-name dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          {{ user.username }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
-                        </div>
-                    </li>
-                </div>
+            <!-- 如果用户已经登录，则显示用户名下拉框 -->
+            <div class="login-registar">
+                <li class="nav-item">
+                    <a class="nav-link-name dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
+                    </div>
+                </li>
+            </div>
             <!-- 如果用户未登录，则显示 “登录” -->
             {% else %}
-                <div class="login-registar">
-                    <a class="nav-link" href="{% url 'userprofile:login' %}">登录</a>
-                </div>
+            <div class="login-registar">
+                <a class="nav-link" href="{% url 'userprofile:login' %}">登录</a>
+            </div>
             <!-- if 语句在这里结束 -->
             {% endif %}
 
@@ -119,25 +105,27 @@
     </header>
 
     {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            {{ message }}
-          </div>
-        {% endfor %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        {{ message }}
+    </div>
+    {% endfor %}
     {% endif %}
 </div>
 
+
 <!-- 中部body -->
 <div class="content-body">
-    <div class="content-box">
-            <div class="content-left">
+    <div class="container">
+        <div class="row">
+            <main class="content-left col-md-8">
                 {% block main %}
                 {% endblock main %}
-            </div>
+            </main>
 
-            <div class="content-right">
+            <aside class="content-right col-md-4">
                 {% block toc %}
                 {% endblock toc %}
                 <!-- 最新文章模板标签 -->
@@ -153,24 +141,25 @@
                     <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
                 </div>
                 -->
-            </div>
+            </aside>
 
+        </div>
     </div>
 </div>
-
-<!-------footer底部------>
-
+<!--底部-->
 <footer class="footer-box">
     <div class="white">
     </div>
-	<div class="footer-nav">
-		<nav> <a href="#" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span class="pipe">|</span> <a href="#" target="_blank">友情链接</a> </nav>
+    <div class="footer-nav">
+        <nav><a href="#" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span
+                class="pipe">|</span> <a href="#" target="_blank">友情链接</a></nav>
     </div>
     <div class="footer-nav2">
-		<p>Copyright &copy;2018-2020 Ale All Rights Reserved. <br>
-			<a href="http://www.beian.gov.cn/portal/recordQuery?token=f5d6abf1-2511-4d48-b105-30b3c68daf08" target="_blank" rel="nofollow"> 鲁ICP备18030501号-2</a><br>
-		</p>
-	</div>
+        <p>Copyright &copy;2018-2020 Ale All Rights Reserved. <br>
+            <a href="http://www.beian.gov.cn/portal/recordQuery?token=f5d6abf1-2511-4d48-b105-30b3c68daf08"
+               target="_blank" rel="nofollow"> 鲁ICP备18030501号-2</a><br>
+        </p>
+    </div>
 </footer>
 
 <!-- Mobile Menu -->
