@@ -62,17 +62,23 @@ a:focus {
 }
 
 body {
+    /*
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+    */
+    font-family:"Open Sans",Helvetica,Arial,sans-serif;
     font-size: 1.25em;
     background-color:#fff;
-    color: #333;
+    color: #444;
 }
 
 p {
-    font-weight: 400;
+    font-weight: normal;
     word-spacing: 1px;
     letter-spacing: 0.01em;
+    /*
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+    */
+    font-family:"Open Sans",Helvetica,Arial,sans-serif;
     font-size: 0.9em;
 }
 
@@ -498,7 +504,19 @@ img {
     text-align: left;
     font-size: 1.63em;
     margin-bottom: 10px;
-    font-weight: 449;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.entry-title a{
+    font-size: 1.9999999rem;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #337ab7;
+}
+
+.entry-title a:hover{
+    color:#444;
 }
 
 /* 小字简介样式 */
@@ -507,6 +525,13 @@ img {
     color: #DDDDDD;
     font-size: 13px;
     margin-bottom: 10px;
+}
+
+.entry-meta span a{
+    color:#757575;
+    font-size: 1.398571429rem;
+    font-weight: normal;
+    line-height: 1.846153846;
 }
 
 .arcle-detail{
@@ -525,6 +550,9 @@ img {
 .entry-content p{
     margin:0 0 0 0;
     letter-spacing:0.1px;
+    line-height: 1.714286;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #444;
 }
 
 .post-category::after,
@@ -637,21 +665,22 @@ img {
     margin-top: 2px;
     text-align: center;
     line-height:20px;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
 }
 
 .footer-nav a{
-    letter-spacing:1px;
-    color:#636363;
+    letter-spacing:0.1px;
+    color:#444;
 }
 
 .footer-nav2 p{
-    letter-spacing:1px;
-    color:#636363;
+    letter-spacing:0.1px;
+    color:#444;
     margin:0 0;
 }
 .footer-nav2 a{
-    letter-spacing:1px;
-    color:#636363;
+    letter-spacing:0.1px;
+    color:#444;
 }
 
 
@@ -681,9 +710,14 @@ img {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     word-spacing: -1px;
-    letter-spacing: 0.01em;
     text-align: right;
     margin-top: 8px;
+}
+
+.read-more a{
+    letter-spacing: 0.1px;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #444;
 }
 
 .cl-effect-14 a {
@@ -764,12 +798,13 @@ img {
 }
 
 .widget-title {
-    font-size: 1.35em;
     margin-top: -22px;
     margin-bottom: 10px;
-    line-height: 1.6;
     padding: 10px 0 0 15;
-    font-weight: 540;
+    font-size: 1.9999999rem;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #444;
 }
 
 .widget-recent-posts ul {
@@ -783,6 +818,12 @@ img {
     position: relative;
     line-height: 170%;
     margin-bottom: 10px;
+}
+
+.widget-recent-posts ul li a {
+    letter-spacing: 0.1px;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #444;
 }
 
 .widget-recent-posts ul li::before {
@@ -808,6 +849,12 @@ img {
     margin-bottom: 10px;
 }
 
+.widget-archives ul li a{
+    letter-spacing: 0.1px;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #444;
+}
+
 .widget-archives ul li::before {
     content: '\f3f3';
     font-family: "Ionicons";
@@ -830,6 +877,12 @@ img {
     line-height: 170%;
     margin-bottom: 10px;
 }
+
+.widget-category ul li a{
+    letter-spacing: 0.1px;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #444;
+    }
 
 .widget-category ul li::before {
     content: '\f3fe';
@@ -856,6 +909,11 @@ img {
     padding: 3px 8px;
     border: 1px solid #ddd;
 }
+.widget-tag-cloud ul li a{
+    letter-spacing: 0.1px;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #444;
+    }
 
 .widget-content ul ul {
     margin-top: 10px;
