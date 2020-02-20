@@ -113,7 +113,8 @@ img {
     position: fixed;
     width:100%;
     height:60px;
-    background-color: #808000;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
     border-radius:0;
     z-index: 1030;
 }
@@ -126,7 +127,8 @@ img {
 }
 
 .external{
-    width:1200px;
+    display:inline-block;
+    width:608px;
     height:60px;
     /*border:1px solid yellow;*/
 }
@@ -144,10 +146,9 @@ img {
 .logo-box {
     display:inline-block;
     width:150px ;
-    height:48px ;
+    height:60px ;
     float:left;
-    margin-top:6px;
-    margin-left:10px;
+    margin-left:8px;
 
 
 }
@@ -155,14 +156,17 @@ img {
 .logo {
     display:inline-block;
     width:150px;
-    height:48px;
+    height:60px;
 }
 
 .logo h1 a {
-    color:#ccc;
-    font-size: 20px;
-    font-family: STXingkai;
-    line-height: 1.2
+    color: #515151;
+    font-size: 18px;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    line-height: 1.6;
+    font-weight:1000;
+    letter-spacing:1.25;
+
 }
 
 .logo h1 a:hover {
@@ -170,15 +174,16 @@ img {
     text-decoration: none;
     border-bottom: none;
     */
-    color: white;
-    font-size:21px;
+    color: #060606;
+    font-size:19px;
 }
 
 .logo h1 {
     margin: 0;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    margin-left: 10px;
+    height:60px;
+
 }
 
 /**
@@ -189,7 +194,7 @@ img {
     float:left;
     margin-left:50px;
     height:60px;
-    width:600px;
+    width:400px;
     /*border:1px solid white;*/
 }
 
@@ -202,7 +207,7 @@ img {
 }
 
 .main-nav a {
-    color: #ccc;
+    color: #999;
     padding: 2 0 5px 0 !important;
     margin-right: 30px;
     font-family: STXingkai;
@@ -213,7 +218,7 @@ img {
 .main-nav a:hover {
     background-color: transparent !important;
     border-bottom: 0;
-    color:white;
+    color:#636363;
     font-size:21px;
 }
 
@@ -248,16 +253,16 @@ img {
 .nav-link {
     display:inline-block;
     float:right;
-    top: 9px;
+    top:11px;
     margin: 5px 0px 0px 0px;
     font-family: STXingkai;
     font-size: 20px;
-    color:#ccc;
-    margin-top:12px;
+    color:#999;
+    margin-top:15px;
 }
 
 .nav-link:hover{
-    color:white;
+    color:#6a6a6a;
     font-size:21px;
 }
 
@@ -265,12 +270,12 @@ img {
     top: 0px;
     margin-right:2px;
     font-family: STXingkai;
-    color:#ccc;
+    color:#999;
     font-size: 20px;
 }
 
 .nav-link-name:hover{
-    color:white;
+    color:#636363;
     font-size:21px;
 }
 
@@ -330,7 +335,6 @@ img {
  */
 .search-box{
     display:inline-block;
-    float:right;
     width:200px;
     height:60px;
     margin-right:50px;
@@ -409,7 +413,7 @@ img {
 }
 .squair-box button span:hover {
     font-size:23px;
-    color:white;
+    color:#626262;
 }
 
 
@@ -450,7 +454,7 @@ img {
 
 .content-body {
     padding-top:72px;
-    background-color: lightgrey;
+    background-color: #e6e6e6;
 }
 
 .container {
@@ -468,8 +472,9 @@ img {
     float:left;
     width:800px;
     /*margin:0px 5px 2pfx 5px;*/
-    background-color: #eee;
+    background-color: #fff;
     position: static;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
 
 
 }
@@ -479,8 +484,9 @@ img {
     width: 345px;
     float:right;
     margin:0 5px 2px 5px;
-    background-color: #eee;
+    background-color: #fff;
     position: static;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
 }
 
 
@@ -606,7 +612,8 @@ img {
 .footer-box{
     clear:both;
     margin:0 auto;
-    background-color: #808000;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
 /*    border-top:1px solid #E8E8E8;
     padding:15px 0;
     font-family:tahoma,Arial;
@@ -617,8 +624,8 @@ img {
     }
 
 .white{
-    height:8px;
-    background-color:lightgrey;
+    height:15px;
+    background-color:#e6e6e6;
 }
 
 .footer-nav{
@@ -634,17 +641,17 @@ img {
 
 .footer-nav a{
     letter-spacing:1px;
-    color:#ccc;
+    color:#636363;
 }
 
 .footer-nav2 p{
     letter-spacing:1px;
-    color:#ccc;
+    color:#636363;
     margin:0 0;
 }
 .footer-nav2 a{
     letter-spacing:1px;
-    color:#ccc;
+    color:#636363;
 }
 
 

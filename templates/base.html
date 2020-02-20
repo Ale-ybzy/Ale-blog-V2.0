@@ -45,74 +45,68 @@
 
             <div class="logo-box">
                 <div class="logo ">
-                    <h1><a href="{% url 'blog:index' %}">野有蔓草<br>&nbsp;&nbsp;零露漙兮</a></h1>
+                    <h1><a href="{% url 'blog:index' %}">野有蔓草<br>&nbsp;&nbsp;&nbsp;零露漙兮</a></h1>
                 </div>
             </div>
 
             <div class="nav-right">
                 <nav class="main-nav " role="navigation">
-
-                    <!--                    <div class="navbar-header">-->
-                    <!--                        <button type="button" id="trigger-overlay" class="navbar-toggle">-->
-                    <!--                            <span class="ion-navicon"></span>-->
-                    <!--                        </button>-->
-                    <!--                    </div>-->
-
                     <div class="navbar-list">
                         <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
-                        <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>
-                        <a href="about.html" data-hover="时光册 ">时光册</a></li>
-                        <a href="history.html" data-hover="脚印">脚印</a></li>
+<!--                        <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>-->
+<!--                        <a href="about.html" data-hover="时光册 ">时光册</a></li>-->
+<!--                        <a href="history.html" data-hover="脚印">脚印</a></li>-->
                     </div>
                 </nav>
-
-                <div class="search-box">
-                    <form role="search" method="get" action="{% url 'blog:search' %}">
-                        <div id="searchform">
-                            <input type="search" name="q" placeholder="搜索" required>
-                        </div>
-                        <div class="squair-box">
-                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
-                        </div>
-                    </form>
-                </div>
             </div>
-
-
-            <!-- Django的 if 模板语句 -->
-            {% if user.is_authenticated %}
-            <!-- 如果用户已经登录，则显示用户名下拉框 -->
-            <div class="login-registar">
-                <li class="nav-item">
-                    <a class="nav-link-name dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ user.username }}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
-                    </div>
-                </li>
-            </div>
-            <!-- 如果用户未登录，则显示 “登录” -->
-            {% else %}
-            <div class="login-registar">
-                <a class="nav-link" href="{% url 'userprofile:login' %}">登录</a>
-            </div>
-            <!-- if 语句在这里结束 -->
-            {% endif %}
-
         </div>
-    </header>
 
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% endif %}
+        <div class="search-box">
+            <form role="search" method="get" action="{% url 'blog:search' %}">
+                <div id="searchform">
+                    <input type="search" name="q" placeholder="搜索" required>
+                </div>
+                <div class="squair-box">
+                    <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                </div>
+            </form>
+        </div>
+
+        <!-----登录模块------>
+        <!-- Django的 if 模板语句 -->
+        {% if user.is_authenticated %}
+        <!-- 如果用户已经登录，则显示用户名下拉框 -->
+        <div class="login-registar">
+            <li class="nav-item">
+                <a class="nav-link-name dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ user.username }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
+                </div>
+            </li>
+        </div>
+        <!-- 如果用户未登录，则显示 “登录” -->
+        {% else %}
+        <div class="login-registar">
+            <a class="nav-link" href="{% url 'userprofile:login' %}">登录</a>
+        </div>
+        <!-- if 语句在这里结束 -->
+        {% endif %}
+
+    </header>
+</div>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
 </div>
 
 
