@@ -242,84 +242,6 @@ img {
     float:left;
 }
 
-/*用户登录*/
-.login-registar {
-    display:inline-block;
-    float:right;
-    width:60px;
-    height:60px;
-}
-.nav-item {
-    display:inline-block;
-    float:right;
-    margin-top:12px;
-
-}
-
-.nav-link {
-    display:inline-block;
-    float:right;
-    top:11px;
-    margin: 5px 0px 0px 0px;
-    font-family: STXingkai;
-    font-size: 20px;
-    color:#999;
-    margin-top:15px;
-}
-
-.nav-link:hover{
-    color:#6a6a6a;
-    font-size:21px;
-}
-
-.nav-link-name {
-    top: 0px;
-    margin-right:2px;
-    font-family: STXingkai;
-    color:#999;
-    font-size: 20px;
-}
-
-.nav-link-name:hover{
-    color:#636363;
-    font-size:21px;
-}
-
-.form-control {
-    width: 20%;
-}
-
-.login {
-    margin: 120px 20px 87px 400px;
-}
-
-.login-in {
-    margin: 10px 10px 10px 10px;
-}
-/*登录按钮*/
-.btn-primary {
-    background-color: #8a6d3b;
-    border-color: #8a6d3b;
-}
-.login-button {
-    color: #6c367d;
-}
-
-/*退出登录*/
-.dropdown-menu {
-    float: left;
-    min-width: 100px;
-    font-size: 14px;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
-.dropdown-item {
-    margin: 0px 0px 0px 0px;
-}
-
 /*
 .main-nav a:active,
 .main-nav a:focus,
@@ -468,7 +390,7 @@ img {
     width:1166px;
     overflow: hidden;
     height: auto!important;
-    min-height: 700px;
+    min-height: auto;
 }
 
 
@@ -1324,8 +1246,110 @@ label{
     margin:10px 0px 0px 0px;
 }
 
+
+/*14. 用户登录CSS */
+/*用户登录*/
+.login-body{
+    padding-top:72px;
+    background-color: #e6e6e6;
+    height:685px;
+}
+.login-container{
+    overflow:auto!important;
+    width:800px;
+    margin-top:10px;
+    background-color:#fff;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
+}
+
+.login-box {
+    margin: 0 auto;
+    width:600px;
+    height:400px;
+    margin-top:50px;
+}
+
+.login-registar {
+    display:inline-block;
+    float:right;
+    width:60px;
+    height:60px;
+}
+
 /*用户注册*/
-.register-login {
-    font-size:33px;
-    margin:10px 0px 0px 400px;
+.register-box {
+    margin: 0 auto;
+    width:600px;
+    height:450px;
+    margin-top:20px;
+}
+
+
+.nav-item {
+    display:inline-block;
+    float:right;
+    margin-top:12px;
+
+}
+
+.nav-link {
+    display:inline-block;
+    float:right;
+    top:11px;
+    margin: 5px 0px 0px 0px;
+    font-family: STXingkai;
+    font-size: 20px;
+    color:#999;
+    margin-top:15px;
+}
+
+.nav-link:hover{
+    color:#6a6a6a;
+    font-size:21px;
+}
+
+.nav-link-name {
+    top: 0px;
+    margin-right:2px;
+    font-family: STXingkai;
+    color:#999;
+    font-size: 20px;
+}
+
+.nav-link-name:hover{
+    color:#636363;
+    font-size:21px;
+}
+
+.form-control {
+    width: 20%;
+}
+
+
+.login-in {
+    margin: 0 auto;
+
+}
+/*登录按钮*/
+.btn-primary {
+    background-color: #8a6d3b;
+    border-color: #8a6d3b;
+}
+.login-button {
+    color: #6c367d;
+}
+
+/*退出登录*/
+.dropdown-menu {
+    float: left;
+    min-width: 100px;
+    font-size: 14px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.dropdown-item {
+    margin: 0px 0px 0px 0px;
 }
