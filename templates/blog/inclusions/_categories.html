@@ -3,6 +3,7 @@
   <ul>
     {% for category in category_list %}
       <li>
+        <span class="iconfont">&#xe751;</span>
         <a href="{% url 'blog:category' category.pk %}">
           {{ category.name }}
           <span class="post-count">

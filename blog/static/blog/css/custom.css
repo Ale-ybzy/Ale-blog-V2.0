@@ -321,6 +321,7 @@ img {
 .ion-ios-search-strong::before{
     content: "\f4a4";
     margin-top:2px;
+    font-family: "Ionicons";
 }
 
 .squair-box button{
@@ -335,12 +336,12 @@ img {
 .squair-box button span {
     display:inline-block;
     float:right;
-    font-size: 22px;
+    font-size: 20px;
     width:30px;
     height:26px;
 }
 .squair-box button span:hover {
-    font-size:23px;
+    font-size:22px;
     color:#626262;
 }
 
@@ -381,7 +382,7 @@ img {
  */
 
 .content-body {
-    padding-top:72px;
+    padding-top:78px;
     background-color: #e6e6e6;
 }
 
@@ -389,7 +390,8 @@ img {
     margin: 0 auto;
     width:1166px;
     overflow: hidden;
-    height: auto!important;
+    /*
+    height: auto!important; */
     min-height: auto;
 }
 
@@ -428,13 +430,14 @@ img {
     margin-bottom: 10px;
     font-weight: normal;
     line-height: 1.2;
+    color: #3380b7f5;
 }
 
 .entry-title a{
-    font-size: 1.9999999rem;
+    font-size: 1.9199999rem;
     line-height: 1.2;
     font-weight: normal;
-    color: #337ab7;
+    color: #3380b7f5;
 }
 
 .entry-title a:hover{
@@ -477,13 +480,15 @@ img {
     color: #444;
 }
 
+/*
 .post-category::after,
 .post-date::after,
 .post-author::after,
 .comments-link::after {
     content: ' ·';
     color: #000;
-}
+}*/
+
 
 /**
  * 12.0 - Comment
@@ -495,7 +500,7 @@ img {
     display:inline-block;
     float:left;
     width:700px;
-    margin-left:10px;
+    padding:0 20px;
 }
 
 .comment-frame {
@@ -519,7 +524,7 @@ img {
 }
 
 .comment-list-panel {
-    margin:25px 0 10px 20px;
+    margin:25px 0 10px 0;
 }
 
 .comment-list {
@@ -720,19 +725,17 @@ img {
 }
 
 .widget-title {
-    margin-top: -22px;
     margin-bottom: 10px;
-    padding: 10px 0 0 15;
-    font-size: 1.9999999rem;
+    padding: 0 0 0 15;
+    font-size: 1.9199999rem;
     line-height: 1.2;
     font-weight: normal;
-    color: #444;
+    color: #3380b7f5;
 }
 
 .widget-recent-posts ul {
     padding: 5;
     margin: 10;
-    padding-left: 20px;
 }
 
 .widget-recent-posts ul li {
@@ -748,6 +751,7 @@ img {
     color: #444;
 }
 
+/*
 .widget-recent-posts ul li::before {
     content: '\f3d3';
     font-family: "Ionicons";
@@ -756,12 +760,11 @@ img {
     top: 3px;
     font-size: 16px;
     color: #000;
-}
+}*/
 
 .widget-archives ul {
     padding: 5;
     margin: 10;
-    padding-left: 25px;
 }
 
 .widget-archives ul li {
@@ -777,6 +780,7 @@ img {
     color: #444;
 }
 
+/*
 .widget-archives ul li::before {
     content: '\f3f3';
     font-family: "Ionicons";
@@ -785,12 +789,11 @@ img {
     top: 1px;
     font-size: 16px;
     color: #000;
-}
+}*/
 
 .widget-category ul {
     padding: 5;
     margin: 10;
-    padding-left: 25px;
 }
 
 .widget-category ul li {
@@ -806,6 +809,7 @@ img {
     color: #444;
     }
 
+/*
 .widget-category ul li::before {
     content: '\f3fe';
     font-family: "Ionicons";
@@ -814,7 +818,7 @@ img {
     top: 1px;
     font-size: 18px;
     color: #000;
-}
+}*/
 
 .widget-tag-cloud ul {
     padding: 5;
@@ -829,8 +833,13 @@ img {
     margin-right: 10px;
     margin-bottom: 10px;
     padding: 3px 8px;
-    border: 1px solid #ddd;
+    border:1px solid #c7c4c4;
 }
+
+.widget-tag-cloud ul li:hover{
+    background-color:#4733b794;
+}
+
 .widget-tag-cloud ul li a{
     letter-spacing: 0.1px;
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
@@ -1257,7 +1266,8 @@ label{
 .login-container{
     overflow:auto!important;
     width:800px;
-    margin-top:10px;
+    height:500px;
+    margin-top:25px;
     background-color:#fff;
     box-shadow: 0 2px 6px rgba(100,100,100,0.3);
 }
@@ -1266,7 +1276,7 @@ label{
     margin: 0 auto;
     width:600px;
     height:400px;
-    margin-top:50px;
+    margin-top:80px;
 }
 
 .login-registar {
@@ -1290,6 +1300,13 @@ label{
     float:right;
     margin-top:12px;
 
+}
+
+.from-box{
+    width:400px;
+    height:400px;
+    margin:0 auto;
+    margin-top: 16px;
 }
 
 .nav-link {
@@ -1322,12 +1339,14 @@ label{
 }
 
 .form-control {
-    width: 20%;
+    width: auto;
 }
 
 
 .login-in {
     margin: 0 auto;
+    width:300px;
+    height:300px;
 
 }
 /*登录按钮*/
@@ -1353,3 +1372,6 @@ label{
 .dropdown-item {
     margin: 0px 0px 0px 0px;
 }
+
+
+

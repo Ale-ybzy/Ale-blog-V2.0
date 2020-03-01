@@ -19,7 +19,11 @@
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/iconfont.css' %}">
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/demo.css' %}">-->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/iconfont.css' %}">-->
+<!--    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
@@ -30,6 +34,7 @@
     <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
     <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+    <script src="https://cdn.bootcss.com/ionicons/5.0.0/cjs/core-76b01094.js"></script>
 
     <!--ckeditor代码高亮prism静态文件-->
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
@@ -67,7 +72,8 @@
                     <input type="search" name="q" placeholder="搜索" required>
                 </div>
                 <div class="squair-box">
-                    <button type="submit"><span class="ion-ios-search-strong"></span></button>
+<!--                    <button type="submit"><span class="ion-ios-search-strong"></span></button>-->
+                    <button type="submit"><span class="iconfont">&#xe63c;</span></button>
                 </div>
             </form>
         </div>
@@ -118,7 +124,6 @@
                 {% block main %}
                 {% endblock main %}
             </main>
-
             <aside class="content-right col-md-4">
                 {% block toc %}
                 {% endblock toc %}

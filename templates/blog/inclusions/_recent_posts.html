@@ -3,6 +3,7 @@
   <ul>
     {% for post in recent_post_list %}
       <li>
+        <span class="iconfont">&#xe658;</span>
         <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
       </li>
     {% empty %}
