@@ -400,7 +400,7 @@ img {
 .content-left {
     display:inline-block;
     float:left;
-    width:800px;
+    width:835px;
     /*margin:0px 5px 2pfx 5px;*/
     background-color: #fff;
     position: static;
@@ -411,7 +411,7 @@ img {
 
 .content-right {
     display:inline-block;
-    width: 345px;
+    width: 310px;
     float:right;
     margin:0 5px 2px 5px;
     background-color: #fff;
@@ -441,7 +441,8 @@ img {
 }
 
 .entry-title a:hover{
-    color:#444;
+
+    color:#fbbc05;
 }
 
 /* 小字简介样式 */
@@ -598,6 +599,10 @@ img {
 .footer-nav a{
     letter-spacing:0.1px;
     color:#444;
+}
+
+.footer-nav a:hover{
+    color:#fbbc05;
 }
 
 .footer-nav2 p{
@@ -759,6 +764,10 @@ img {
     color: #444;
 }
 
+.widget-recent-posts ul li a:hover{
+    color:#fbbc05 ;
+}
+
 /*
 .widget-recent-posts ul li::before {
     content: '\f3d3';
@@ -817,6 +826,9 @@ img {
     color: #444;
     }
 
+.widget-category ul li a:hover{
+    color:#fbbc05 ;
+}
 /*
 .widget-category ul li::before {
     content: '\f3fe';
@@ -1368,17 +1380,23 @@ label{
 
 /*退出登录*/
 .dropdown-menu {
-    float: left;
     min-width: 100px;
     font-size: 14px;
     background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
+.dropdown-menu{
+    position:static;
+    padding:5px 5px;
+
+}
+
+
 .dropdown-item {
-    margin: 0px 0px 0px 0px;
+    color: #999;
+    font-family: STXingkai;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.2;
 }
 
 
