@@ -102,16 +102,19 @@
 
 <!--底部-->
 <footer class="footer-box">
-<!--    <div class="white">-->
-<!--    </div>-->
+    <div class="white">
+    </div>
     <div class="footer-nav">
-        <nav><a href="#" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span
+        <nav><a href="{% url 'blog:about' %}" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span
                 class="pipe">|</span> <a href="#" target="_blank">友情链接</a></nav>
     </div>
     <div class="footer-nav2">
         <p>Copyright &copy;2018-2020 Ale All Rights Reserved. <br>
-            <a href="http://www.beian.gov.cn/portal/recordQuery?token=f5d6abf1-2511-4d48-b105-30b3c68daf08"
-               target="_blank" rel="nofollow"> 鲁ICP备18030501号-2</a><br>
+            <a href="http://www.beian.miit.gov.cn"
+               target="_blank" rel="nofollow">
+<!--                <img src="{% static 'blog/ybzb.ico' %}">-->
+                <div class="ico"></div>
+                鲁ICP备18030501号-2</a><br>
         </p>
     </div>
 </footer>

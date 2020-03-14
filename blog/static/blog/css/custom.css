@@ -587,13 +587,13 @@ img {
 .footer-nav{
     padding-top: 10px;
     text-align: center;
+    margin-button:2px;
 }
 
 .footer-nav2{
     margin-top: 2px;
     text-align: center;
     line-height:20px;
-    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
 }
 
 .footer-nav a{
@@ -609,6 +609,7 @@ img {
     letter-spacing:0.1px;
     color:#444;
     margin:0 0;
+    margin-button:2px;
 }
 .footer-nav2 a{
     letter-spacing:0.1px;
@@ -1401,3 +1402,105 @@ label{
 
 
 
+
+/*** About me page css ***/
+.about-body{
+    padding-top: 78px;
+    height:1250px;
+    width:100%;
+    background-color: #e6e6e6!important;
+}
+
+.about-box{
+    position:absolute;
+    display:inline-block;
+    width:888px;
+    height:1150px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
+    left:0;
+    right:0;
+    margin:auto;
+    border-radius:2%;
+}
+
+.about{
+    margin: 15px 5px 5px 24px;
+    width:800px;
+}
+
+.about-up{
+    height:180px;
+}
+
+.intro-box{
+    height:180px;
+
+}
+
+.intro-left{
+    height:180px;
+    width:300px;
+    display:inline-block;
+    float:left;
+    margin-left:70px;
+}
+.intro-left img{
+    max-width: 40%;
+    border-radius: 30%;
+    margin: 30px 0 0 40px;
+}
+
+.intro-right {
+    display:inline-block;
+    float:left;
+    height:180px;
+    width:300px;
+}
+
+.ale{
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    margin-top:21px;
+}
+
+.list1,.list2,.list3{
+    font-size:16px;
+    margin-top:4px;
+    text-indent:4;
+    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+
+}
+
+.about-center{
+    height:566px;
+    border-top:1px solid #b4b4b4;
+}
+
+.about-me{
+    height:535px;
+    display: grid;
+    margin: 20px 20px 10px 20px;
+
+}
+
+.about-me a{
+    font-size:14px;
+    text-align: center;
+    line-height: 1.846153846;
+}
+
+.about-end{
+    border-top:1px solid #b4b4b4;
+}
+
+.about-blog-name{
+    display:grid;
+    margin: 20px 20px 10px 20px;
+    height: 350px;
+}
+
+.about-blog-name a{
+    font-size:14px;
+    text-align: center;
+    line-height: 1.846153846;
+}

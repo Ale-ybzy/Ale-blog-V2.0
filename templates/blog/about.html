@@ -19,7 +19,7 @@
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!--    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
@@ -65,37 +65,71 @@
 </div>
 
 <!-- 中部body -->
-<!-- 用户登录 -->
-<div class="login-body">
-    <div class="container login-container">
-        <div class="login-box">
-            <form class="login-in" method="post" action=".">
-                {% csrf_token %}
-                <!-- 账号 -->
-                <div class="form-group">
-                    <label for="username">账号</label>
-                    <input type="text" class="form-control" id="username" name="username" >
+<div class="about-body">
+    <div class="about-box">
+        <div class="about">
+            <div class="about-up">
+                <div class="intro-box">
+                    <div class="intro-left">
+                        <img src="{% static 'blog/me.jpg' %}">
+                    </div>
+                    <div class="intro-right">
+                            <h2 class="ale">Ale</h2>
+                            <div class="list1">IT道路上攀爬的小学生</div>
+                            <div class="list2">学无止境，不会就学</div>
+                            <div class="list3">不懂就查，周而复始</div>
+                    </div>
                 </div>
-                <!-- 密码 -->
-                <div class="form-group">
-                    <label for="password">密码</label>
-                    <input type="password" class="form-control" id="password" name="password" >
+            </div>
+
+            <div class="about-center">
+                <div class="about-me">
+                    <h2>About me</h2>
+                    <a>一句话概括</a>
+                    <a>间歇性踌躇满志，持续性混吃等死</a>
+                    <a>It's me！</a>
+                    <a>白日梦想家、屌丝宅男</a>
+                    <a>脱单苦难户</a>
+                    <a>三分钟热度铁粉</a>
+                    <a>哈哈哈</a>
+                    <a>这个博客可以说是我由N个三分钟热度影响拼接而成</a>
+                    <a>断断续续走走停停了也有好久</a>
+                    <a>而那些博文内容，也都是自己一路攀爬的见证</a>
+<!--                    <a>它们的存在</a>-->
+<!--                    <a>确实记录了我曾经的三分钟热度</a>-->
+                    <a>任凭以后的我看来有多么的糟糕</a>
+                    <a>这都是我最珍贵的记忆</a>
+                    <a>最重要的</a>
+                    <a>我还希望自己能够一路积攒下去！</a>
+
                 </div>
-                <!-- 提交按钮 -->
-                <button type="submit" class="btn btn-default radius">提交</button>
-                <br><br>
-                <h5>还没有账号？</h5>
-                <h5>点击 <a class="btn btn-default radius" href='{% url "userprofile:register" %}'>注册账号</a></h5>
-                <br>
-            </form>
+
+            </div>
+
+            <div class="about-end">
+                <div class="about-blog-name">
+                    <h2>About blog</h2>
+                    <a>博客名称：野有蔓草，零露漙兮</a>
+                    <a>出自《国风·郑风·野有蔓草》</a>
+                <a> </a>
+                    <a>野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。</a>
+                    <a>野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。</a>
+                <a> </a>
+                    <a>它寓意着我对未来的美好期待</a>
+                    <a>喂喂喂</a>
+                    <a>这位同学，这位同学</a>
+                    <a>醒醒，醒醒~</a>
+                    <a>终点站到了...</a>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+
 <!--底部-->
 <footer class="footer-box">
-    <div class="white">
-    </div>
     <div class="footer-nav">
         <nav><a href="{% url 'blog:about' %}" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span
                 class="pipe">|</span> <a href="#" target="_blank">友情链接</a></nav>

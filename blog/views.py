@@ -110,3 +110,7 @@ def search(request):
 
     post_list = Post.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
     return render(request, 'blog/index.html', {'post_list': post_list})
+
+#自我简介页面
+def about(request):
+    return render(request,'blog/about.html')
