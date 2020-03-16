@@ -105,8 +105,10 @@
     <div class="white">
     </div>
     <div class="footer-nav">
-        <nav><a href="{% url 'blog:about' %}" target="_blank">自我简述</a> <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> <span
-                class="pipe">|</span> <a href="#" target="_blank">友情链接</a></nav>
+        <nav><a href="{% url 'blog:about' %}" target="_blank">自我简述</a>
+<!--            <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> -->
+            <span
+                class="pipe">|</span> <a href="{% url 'blog:blogroll'%}" target="_blank">博客推荐</a></nav>
     </div>
     <div class="footer-nav2">
         <p>Copyright &copy;2018-2020 Ale All Rights Reserved. <br>

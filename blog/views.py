@@ -114,3 +114,7 @@ def search(request):
 #自我简介页面
 def about(request):
     return render(request,'blog/about.html')
+
+#友情链接界面
+def blogroll(request):
+    return render(request,'blog/blogroll.html')

@@ -15,4 +15,5 @@ urlpatterns = [
     path('tags/<int:pk>/', views.tag, name='tag'),  #标签页
     path('search/', views.search, name='search'),  #搜索页
     path('about/', views.about, name='about'),  #自我简介页
+    path('blogroll/', views.blogroll, name='blogroll'),
 ]
