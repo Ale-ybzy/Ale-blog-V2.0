@@ -61,6 +61,20 @@ a:focus {
     background-color: #eee;
 }
 
+.pace .pace-progress {
+  background: #000;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 1px;
+  transition: width 1s;
+}
+
+.pace-inactive {
+  display: none;
+}
+
 body {
     /*
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
@@ -421,7 +435,7 @@ img {
 
 
 .post {
-    padding: 30px 20px 1;
+    padding: 30px 20px 8px;
 }
 
 .entry-title {
@@ -437,7 +451,7 @@ img {
     font-size: 1.9199999rem;
     line-height: 1.2;
     font-weight: normal;
-    color: #3380b7f5;
+    color: darkcyan;
 }
 
 .entry-title a:hover{
@@ -1184,8 +1198,8 @@ img {
     }
 
     .more-link {
-        font-size: 0.9em;
-        line-height: 100%;
+        font-size: 0.5em;
+        line-height: 40%;
     }
 }
 

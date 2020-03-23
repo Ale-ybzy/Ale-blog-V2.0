@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'), #首页
     path('posts/<int:pk>/', views.detail, name='detail'), #详情页
     path('archives/<int:year>/<int:month>/', views.archive, name='archive'), #归档页
+
     #path('archives/<int:year>/<int:month>/', views.ArchivesView.as_view(), name='archive'), #归档页
     #path('categories/<int:pk>/', views.category, name='category'), #分类页
     path('categories/<int:pk>/', views.CategoryView.as_view(), name='category'),#分类页
