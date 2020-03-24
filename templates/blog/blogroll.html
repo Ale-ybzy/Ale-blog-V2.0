@@ -1,69 +1,8 @@
-{% load static %}
-{% load blog_extras %}
+{% extends 'base.html' %}
 
-<! DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <!-- title -->
-    <title>Ale_blog</title>
-    <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
-
-    <!-- meta -->
-    <meta charset="UTF-8">
-    <meta name="keywords" content="技术、工作、生活、学习">
-    <meta name="description" content="关于个人学习成长的博客，记录生活中点滴的进步、思考感悟、快乐悲伤，">
-    <!-- 为移动设备添加视口 -->
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <!-- 优先使用IE最新版和chrome -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
-<!--    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
-
-    <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
-    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-    <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
-<!--    <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>-->
-<!--    <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>-->
-<!--    <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>-->
-
-    <!--ckeditor代码高亮prism静态文件-->
-    <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
-
-</head>
-
-<body>
-<!--头部及导航栏-->
-<div class="head-navbar">
-    <header id="site-header">
-        <div class="external">
-
-            <div class="logo-box">
-                <div class="logo ">
-                    <h1><a href="{% url 'blog:index' %}">野有蔓草<br>&nbsp;&nbsp;&nbsp;零露漙兮</a></h1>
-                </div>
-            </div>
-
-            <div class="nav-right">
-                <nav class="main-nav " role="navigation">
-                    <div class="navbar-list">
-                        <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
-<!--                        <a href="contact.html" data-hover="碎碎念">碎碎念</a></li>-->
-<!--                        <a href="about.html" data-hover="时光册 ">时光册</a></li>-->
-<!--                        <a href="history.html" data-hover="脚印">脚印</a></li>-->
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-    </header>
-</div>
 
 <!-- 中部body -->
+{% block body %}
 <div class="blogroll-body">
     <div class="blogroll-box">
         <div class="blogroll">
@@ -99,42 +38,4 @@
         </div>
     </div>
 </div>
-
-
-<!--底部-->
-<footer class="footer-box">
-    <div class="footer-nav">
-        <nav><a href="{% url 'blog:about' %}" target="_blank">自我简述</a>
-<!--            <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a>a-->
-            <span
-                class="pipe">|</span> <a href="{% url 'blog:blogroll'%}" target="_blank">博客推荐</a></nav>
-    </div>
-    <div class="footer-nav2">
-        <p>Copyright &copy;2018-2020 Ale All Rights Reserved. <br>
-            <a href="http://www.beian.miit.gov.cn"
-               target="_blank" rel="nofollow">
-<!--                <img src="{% static 'blog/ybzb.ico' %}">-->
-                <div class="ico"></div>
-                鲁ICP备18030501号-2</a><br>
-        </p>
-    </div>
-</footer>
-
-<!-- Mobile Menu -->
-<!--
-<div class="overlay overlay-hugeinc">
-    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-    <nav>
-        <ul>
-            <li><a href="{% url 'blog:index' %}">首页</a></li>
-            <li><a href="full-width.html">博客</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="contact.html">联系</a></li>
-        </ul>
-    </nav>
-</div>
--->
-
-{% block script %}{% endblock script %}
-</body>
-</html>
+{% endblock body %}

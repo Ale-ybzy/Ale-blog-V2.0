@@ -114,35 +114,8 @@
 
 
 <!-- 中部body -->
-<div class="content-body">
-    <div class="container">
-        <div class="row">
-            <main class="content-left col-md-8">
-                {% block main %}
-                {% endblock main %}
-            </main>
-            <aside class="content-right col-md-4">
-                {% block toc %}
-                {% endblock toc %}
-                <!-- 最新文章模板标签 -->
-                {% show_recent_posts %}
-                <!-- 归档模板标签 -->
-                {% show_archives %}
-                <!-- 分类模板标签 -->
-                {% show_categories %}
-                <!-- 标签模板标签 -->
-                {% show_tags %}
-                <!-- RSS订阅
-                <div class="rss">
-                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
-                </div>
-                -->
-            </aside>
-
-        </div>
-    </div>
-</div>
-
+{% block body %}
+{% endblock body %}
 
 <!--底部-->
 <footer class="footer-box">
