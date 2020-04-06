@@ -73,7 +73,7 @@ class Post(models.Model):
 
         super().save(*args, **kwargs)
 
-    # 自定义get_absolute_url方法生成文章自己的url
+    # 自定义get_absolute_url方法生成文章自己的url返回给浏览器
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
 

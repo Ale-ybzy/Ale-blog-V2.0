@@ -22,12 +22,14 @@ def index(request):
     })
 '''
 
-#首页视图函数
+# 首页视图函数
 '''
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 '''
+
+
 class IndexView(ListView):
     model = Post
     template_name = 'blog/index.html'
@@ -35,19 +37,21 @@ class IndexView(ListView):
     # 指定 paginate_by 属性后开启分页功能，其值代表每一页包含多少篇文章
     paginate_by = 8
 
-#详情页视图函数
+
+# 详情页视图函数
 def detail(request, pk):
+    # get_object_or_404 方法，其作用就是当传入的 pk 对应的 Post 在数据库存在时，就返回对应的 post，如果不存在，就给用户返回一个 404 错误，表明用户请求的文章不存在。
     post = get_object_or_404(Post, pk=pk)
 
     # 阅读量+1
     post.increase_views()
 
     md = markdown.Markdown(extensions=[
-                              'markdown.extensions.extra',
-                              'markdown.extensions.codehilite',
-                               #'markdown.extensions.toc',
-                              TocExtension(slugify=slugify),
-                                  ])
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        # 'markdown.extensions.toc',
+        TocExtension(slugify=slugify),
+    ])
     post.body = md.convert(post.body)
 
     m = re.search(r'<div class="toc">\s*<ul>(.*)</ul>\s*</div>', md.toc, re.S)
@@ -55,11 +59,12 @@ def detail(request, pk):
 
     return render(request, 'blog/detail.html', context={'post': post})
 
-#归档页面视图
+
+# 归档页面视图
 def archive(request, year, month):
     post_list = Post.objects.filter(created_time__year=year,
                                     created_time__month=month
-                                   ).order_by('-created_time')
+                                    ).order_by('-created_time')
     # post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
@@ -76,7 +81,8 @@ class ArchivesView(ListView):
                                                                created_time__month=month
                                                                )
 
-#分类页面视图
+
+# 分类页面视图
 
 def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
@@ -94,13 +100,14 @@ class CategoryView(ListView):
         return super(CategoryView, self).get_queryset().filter(category=cate)
 
 
-#标签页面视图
+# 标签页面视图
 def tag(request, pk):
     t = get_object_or_404(Tag, pk=pk)
     post_list = Post.objects.filter(tag=t).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
-#文章搜索视图函数
+
+# 文章搜索视图函数
 def search(request):
     q = request.GET.get('q')
 
@@ -112,10 +119,12 @@ def search(request):
     post_list = Post.objects.filter(Q(title__icontains=q) | Q(body__icontains=q))
     return render(request, 'blog/index.html', {'post_list': post_list})
 
-#自我简介页面
-def about(request):
-    return render(request,'blog/about.html')
 
-#友情链接界面
+# 自我简介页面
+def about(request):
+    return render(request, 'blog/about.html')
+
+
+# 友情链接界面
 def blogroll(request):
-    return render(request,'blog/blogroll.html')
+    return render(request, 'blog/blogroll.html')
