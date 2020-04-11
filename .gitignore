@@ -3,9 +3,9 @@ venv/
 blog/__pycache__/
 *.pyc
 backup/
+deploy.py
 db.sqlite3
 blogproject/settings.py
-fabfile.py
 _credentials.py
 Pipfile
 Pipfile.lock
