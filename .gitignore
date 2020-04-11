@@ -6,6 +6,7 @@ backup/
 db.sqlite3
 blogproject/settings.py
 fabfile.py
+deploy.py
 _credentials.py
 Pipfile
 Pipfile.lock
