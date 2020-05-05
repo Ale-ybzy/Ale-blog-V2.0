@@ -1,0 +1,62 @@
+version: '3'
+#version 代表 docker-compose.yml 的版本，目前最新版为 3
+
+#卷，它定义了宿主机和容器之间的映射
+volumes:
+  static:
+  database:
+
+services:
+  ale_blog_app:
+    build:
+      context: .
+      # '点'代表当前目录
+      dockerfile: compose/production/django/Dockerfile
+    image: ale_blog_app
+    container_name: ale_blog_app
+    working_dir: /app
+    volumes:
+      - static:/app/static
+      - media:/app/media
+    # "static" 表示宿主机的static目录，":" 为分隔符，"/app/static" 表示容器中的目录。即宿主机目录和容器目录建立连通关系，宿主机目录的 Django 代码更新时，容器中的目录中的代码也相应的更新了。
+    env_file:
+      - .envs/.production
+    ports:
+      - "8000:8000"
+    command: bash start.sh
+    links:
+      - ale_blog_mysql
+    depends_on:
+      - ale_blog_mysql
+
+  ale_blog_nginx:
+    build:
+      context: .
+      dockerfile: compose/production/nginx/Dockerfile
+    image: ale_blog_nginx
+    container_name: ale_blog_nginx
+    volumes:
+      - static:/app/static
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - ale_blog_app
+    depends_on:
+      - ale_blog_app
+    restart: always
+
+  ale_blog_mysql:
+    build:
+      contant: .
+      dockerfile: compose/production/mysql/Dockerfile
+    image: ale_blog_mysql
+    container_name: ale_blog_mysql
+    volumes:
+      - compose/production/mysql/database:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=
