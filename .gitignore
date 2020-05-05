@@ -12,6 +12,7 @@ Pipfile
 Pipfile.lock
 <<<<<<< HEAD
 media/
+compose/production/mysql/database/*
 =======
 media/
 >>>>>>> 07bf40648b76216bd269c6431b9ca940889b3234
