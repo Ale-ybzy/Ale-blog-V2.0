@@ -5,8 +5,8 @@ from . import views
 #url模型
 app_name = 'blog'
 urlpatterns = [
-    #path('', views.index, name='index'), #首页
-    path('', views.IndexView.as_view(), name='index'), #首页
+    path('', views.index, name='index'), #首页
+    # path('', views.IndexView.as_view(), name='index'), #首页
     path('posts/<int:pk>/', views.detail, name='detail'), #详情页
     path('archives/<int:year>/<int:month>/', views.archive, name='archive'), #归档页
 

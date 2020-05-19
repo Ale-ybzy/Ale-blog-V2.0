@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'ckeditor', #注册富文本应用
     'ckeditor_uploader',  #图片上传应用
     'userprofile',  #用户管理
-
+    'accstat',  #访问统计
 ]
 
 MIDDLEWARE = [
