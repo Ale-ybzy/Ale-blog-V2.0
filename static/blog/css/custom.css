@@ -974,7 +974,7 @@ img {
 .footer a,.footer a:hover{color:#999}
 
 /* 评论属性样式 */
-label{
+.label{
     display: inline-block;
     max-width: 100%;
     margin-bottom: 16px;
