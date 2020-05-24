@@ -23,11 +23,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
 
-    <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>
-    <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+<!--    <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>-->
+<!--    <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>-->
+<!--    <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>-->
+<!--    <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>-->
+<!--    <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>-->
 
     <!--ckeditor代码高亮prism静态文件-->
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
@@ -61,7 +61,7 @@
         }
         return time;
     }
-    </script>
+</script>
 <script type="text/javascript" language="javascript">
     function setTime() {
         var create_time = Math.round(new Date(Date.UTC(2018, 6, 20, 14, 0, 0)).getTime() / 1000);  //这里设置建站时间
@@ -71,21 +71,21 @@
                 + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
                 + '秒';
         document.getElementById("htmer_time").innerHTML = currentTimeHtml;
-    }    setInterval(setTime, 1000);
-
-        $(function(){
-            $("#learnmore").click(function(){
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var $target = $(this.hash);
-                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
-                    if ($target.length) {
-                        var targetOffset = $target.offset().top;
-                    $('html,body').animate({scrollTop: targetOffset},800);
-                    return false;
-                    }
-                }
-            });
-        });
+    }
+setInterval(setTime, 1000);
+$(function(){
+    $("#learnmore").click(function(){
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+            $('html,body').animate({scrollTop: targetOffset},800);
+            return false;
+            }
+        }
+    });
+});
 
 </script>
 
