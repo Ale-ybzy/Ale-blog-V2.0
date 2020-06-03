@@ -28,73 +28,23 @@
 <!--    <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>-->
 <!--    <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>-->
 <!--    <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>-->
+        <script type="text/javascript" src="{% static 'blog/js/web.js' %}"></script>
+
+<!--  嵌入音乐  -->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">-->
+<!--<script src="https://blog-static.cnblogs.com/files/yjlaugus/APlayer.min.js"></script>-->
+<!--<script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>-->
 
     <!--ckeditor代码高亮prism静态文件-->
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
-
-<!--网站运行时长JS待优化-->
-<script>
-    function secondToDate(second) {
-        if (!second) {
-            return 0;
-        }
-        var time = new Array(0, 0, 0, 0, 0);
-        if (second >= 365 * 24 * 3600) {
-            time[0] = parseInt(second / (365 * 24 * 3600));
-            second %= 365 * 24 * 3600;
-        }
-        if (second >= 24 * 3600) {
-            time[1] = parseInt(second / (24 * 3600));
-            second %= 24 * 3600;
-        }
-        if (second >= 3600) {
-            time[2] = parseInt(second / 3600);
-            second %= 3600;
-        }
-        if (second >= 60) {
-            time[3] = parseInt(second / 60);
-            second %= 60;
-        }
-        if (second > 0) {
-            time[4] = second;
-        }
-        return time;
-    }
-</script>
-<script type="text/javascript" language="javascript">
-    function setTime() {
-        var create_time = Math.round(new Date(Date.UTC(2018, 6, 20, 14, 0, 0)).getTime() / 1000);  //这里设置建站时间
-        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
-        currentTime = secondToDate((timestamp - create_time));
-        currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
-                + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
-                + '秒';
-        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
-    }
-setInterval(setTime, 1000);
-$(function(){
-    $("#learnmore").click(function(){
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var $target = $(this.hash);
-            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
-            if ($target.length) {
-                var targetOffset = $target.offset().top;
-            $('html,body').animate({scrollTop: targetOffset},800);
-            return false;
-            }
-        }
-    });
-});
-
-</script>
 
 </head>
 
 <body>
 <!--头部及导航栏-->
 <div class="head-navbar">
-    <header id="site-header">
+    <div id="site-header">
         <div class="external">
 
             <div class="logo-box">
@@ -126,6 +76,12 @@ $(function(){
                 </div>
             </form>
         </div>
+
+<!--  网易云音乐插件 -->
+<!--<div id="aplayer" class="aplayer"  data-id="5043004897" data-server="netease"-->
+<!--     data-type="playlist" data-fixed="true" data-listfolded="true"-->
+<!--     data-order="random" data-theme="#F58EA8">-->
+<!--</div>-->
 
         <!-----登录模块------>
         <!-- Django的 if 模板语句 -->
@@ -207,7 +163,6 @@ $(function(){
     </nav>
 </div>
 -->
-
 {% block script %}{% endblock script %}
 </body>
 </html>
