@@ -22,14 +22,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/iconfont.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/music.css' %}">-->
 
-<!--    <script type="text/javascript" src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>-->
-<!--    <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>-->
-<!--    <script type="text/javascript" src="{% static 'blog/js/pace.min.js' %}"></script>-->
-<!--    <script type="text/javascript" src="{% static 'blog/js/modernizr.custom.js' %}"></script>-->
-<!--    <script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>-->
-        <script type="text/javascript" src="{% static 'blog/js/web.js' %}"></script>
-
+    <script type="text/javascript" src="{% static 'blog/js/web.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/audio.min.js' %}"></script>
+<script>
+audiojs.events.ready(function() {
+audiojs.createAll();
+});
+</script>
 <!--  嵌入音乐  -->
 <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">-->
 <!--<script src="https://blog-static.cnblogs.com/files/yjlaugus/APlayer.min.js"></script>-->
@@ -82,6 +83,11 @@
 <!--     data-type="playlist" data-fixed="true" data-listfolded="true"-->
 <!--     data-order="random" data-theme="#F58EA8">-->
 <!--</div>-->
+
+<div class="music-box">
+    <audio src="{% static 'blog/music.mp3' %}"
+           preload="auto"></audio>
+</div>
 
         <!-----登录模块------>
         <!-- Django的 if 模板语句 -->

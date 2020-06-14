@@ -36,3 +36,6 @@ function setTime() {
 	document.getElementById("htmer_time").innerHTML = currentTimeHtml;
 }
 setInterval(setTime, 1000);  //每秒调用一次setTime函数
+
+# 音乐播放器
+

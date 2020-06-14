@@ -1558,3 +1558,10 @@ label{
 .blogroll-list-box a:hover{
     background-color: darkkhaki;
 }
+
+.music-box {
+    display: inline-block;
+    width: 320px;
+    height: 60px;
+    margin-right: 50px;
+}
