@@ -37,5 +37,5 @@ function setTime() {
 }
 setInterval(setTime, 1000);  //每秒调用一次setTime函数
 
-# 音乐播放器
+// 音乐播放器
 
