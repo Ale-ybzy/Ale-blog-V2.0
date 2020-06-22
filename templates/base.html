@@ -22,7 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/iconfont.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/highlights/github.css' %}">
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/music.css' %}">-->
 
     <script type="text/javascript" src="{% static 'blog/js/web.js' %}"></script>
     <script type="text/javascript" src="{% static 'blog/js/audio.min.js' %}"></script>
@@ -32,10 +31,6 @@ audiojs.events.ready(function() {
 audiojs.createAll();
 });
 </script>
-<!--  嵌入音乐  -->
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">-->
-<!--<script src="https://blog-static.cnblogs.com/files/yjlaugus/APlayer.min.js"></script>-->
-<!--<script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>-->
 
     <!--ckeditor代码高亮prism静态文件-->
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
@@ -51,7 +46,7 @@ audiojs.createAll();
 
             <div class="logo-box">
                 <div class="logo ">
-                    <h1><a href="{% url 'blog:index' %}">野有蔓草<br>&nbsp;&nbsp;&nbsp;零露漙兮</a></h1>
+                    <h1><a href="{% url 'blog:index' %}">阿乐博客</a></h1>
                 </div>
             </div>
 
@@ -79,14 +74,8 @@ audiojs.createAll();
             </form>
         </div>
 
-<!--  网易云音乐插件 -->
-<!--<div id="aplayer" class="aplayer"  data-id="5043004897" data-server="netease"-->
-<!--     data-type="playlist" data-fixed="true" data-listfolded="true"-->
-<!--     data-order="random" data-theme="#F58EA8">-->
-<!--</div>-->
-
 <div class="music-box">
-    <audio src="{% static 'blog/music.mp3' %}"
+    <audio src="{% static 'blog/music/2.mp3' %}"
            preload="auto"></audio>
 </div>
 
