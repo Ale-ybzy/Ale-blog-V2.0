@@ -1,5 +1,5 @@
 version: '3'
-#version 代表 docker-compose.yml 的版本，目前最新版为 3
+#version 代表 docker-compose.yml 的版本
 
 #卷，它定义了宿主机和容器之间的映射
 volumes:
@@ -13,7 +13,7 @@ services:
       # '点'代表当前目录
       dockerfile: compose/production/django/Dockerfile
     image: ale_blog_app
-    container_name: ale_blog_app
+    container_name: ale_blog_app_container
     working_dir: /app
     volumes:
       - static:/app/static

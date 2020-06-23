@@ -1,0 +1,20 @@
+version: '3'
+
+volumes:
+  database_local:
+
+services:
+  ale_blog_app:
+    build:
+      context: .
+      dockerfile: ./compose/local/Dockerfile
+    image: ale_blog_app
+    container_name: ale_blog_app_container
+    working_dir: /app
+    volumes:
+      - database_local:/app/database
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: /start.sh
+
