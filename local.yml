@@ -1,20 +1,19 @@
 version: '3'
 
-volumes:
-  database_local:
-
 services:
   ale_blog_app:
     build:
       context: .
-      dockerfile: ./compose/local/Dockerfile
+      dockerfile: ./compose/local/django/Dockerfile
     image: ale_blog_app
     container_name: ale_blog_app_container
-    working_dir: /app
+    working_dir: /my_blog
     volumes:
-      - database_local:/app/database
-      - .:/app
+      - database_local:/my_blog/database
+      - .:/my_blog
     ports:
       - "8000:8000"
     command: /start.sh
+
+
 

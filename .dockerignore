@@ -1,5 +1,6 @@
-.*
 _credentials.py
 fabfile.py
 deploy.py
 *.sqlite3
+venv/
+

@@ -15,6 +15,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file' : 'E:\\Python\\Web-Blog\\Ale-blog-2.0\\venv\\my.cnf',
+
         },
     }
 

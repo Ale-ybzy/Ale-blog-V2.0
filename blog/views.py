@@ -143,3 +143,9 @@ def about(request):
 def blogroll(request):
     change_info(request, '/')
     return render(request, 'blog/blogroll.html')
+
+# 归档页面
+def archivehtml(request):
+    change_info(request, '/')
+    post_list = Post.objects.all().order_by('-created_time')
+    return render(request, 'blog/archivehtml.html', context={'post_list': post_list})

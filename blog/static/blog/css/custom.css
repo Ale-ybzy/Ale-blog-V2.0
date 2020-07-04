@@ -177,16 +177,16 @@ img {
     display:inline-block;
     width:150px;
     height:60px;
-    margin-top: 12px;
+    margin-top: 9px;
 }
 
 .logo h1 a {
     color: #515151;
-    font-size: 20px;
-    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 26px;
+    font-family: STXingkai;
     line-height: 1.6;
-    font-weight:1000;
-    letter-spacing:1.25;
+    font-weight: 400;
+    letter-spacing: 1.25;
 
 }
 
@@ -196,7 +196,7 @@ img {
     border-bottom: none;
     */
     color: #060606;
-    font-size:19px;
+    font-size:28px;
 }
 
 .logo h1 {
@@ -1565,4 +1565,51 @@ label{
     width: 320px;
     height: 60px;
     margin-right: 50px;
+}
+
+/* archive html css  */
+
+.archive-content {
+    border-top: 1.3px solid #c0c0c0;
+    margin: 50px 30px 10px 35px;
+}
+
+.archive-ul {
+    padding: 12px 15px 15px 20px;
+    font-size: 1.8199999rem;
+    line-height: 1.2;
+    color: #555;
+    font-family: -webkit-body;
+    font-weight: bold;
+}
+
+.archive-ul li {
+    margin: 26px 0px 0px 6px;
+    font-size: 1.8199999rem;
+}
+
+.archive-ul li ul li {
+    margin: 12px 0px 0px 6px;
+    font-size: 1.8199999rem;
+}
+
+
+.archive-ul li ul li ul {
+    font-size: 1.9199999rem;
+    line-height: 1.2;
+    font-weight: normal;
+    color: darkcyan;
+    margin: 10px 0px 0px 0px;
+}
+
+.archive-ul li ul li ul li{
+    margin: 8px 0px 0px 0px;
+    font-size: 1.4199999rem;
+    line-height: 1.2;
+    font-weight: normal;
+    color: darkcyan;
+}
+
+.archive-ul li ul li ul li a{
+    color: darkcyan;
 }
