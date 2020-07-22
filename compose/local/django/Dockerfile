@@ -1,11 +1,10 @@
-FROM python:3.6-alpine
-
+FROM python:3.7
 # 设置python环境变量
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update \
-  # Pillow dependencies
-  && apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
+# 更新基础软件环境
+RUN apt-get update
+RUN apt-get install python3-dev default-libmysqlclient-dev -y
 
 # 创建 my_blog 文件夹
 RUN mkdir /my_blog
@@ -16,15 +15,13 @@ WORKDIR /my_blog
 # 将当前目录内容加入到工作目录中（. 表示当前目录）
 ADD . /my_blog
 
+# 更新 pip
+RUN pip install pip -U
+
 # 利用 pip 安装依赖（- i 表示指定清华源，默认源下载过慢）
-RUN pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
+ADD requirements /my_blog/
+RUN pip install -r ./requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
-#设置环境变量
-ENV SPIDER=/my_blog
-
-# COPY ./requirements.txt /app/requirements.txt
-# RUN pip install -r /app/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
-
-COPY ./compose/local/django/start.sh /start.sh
-RUN sed -i 's/\r//' /start.sh
-RUN chmod +x /start.sh
+# COPY ./start.sh /start.sh
+# RUN sed -i 's/\r//' /start.sh
+# RUN chmod +x /start.sh

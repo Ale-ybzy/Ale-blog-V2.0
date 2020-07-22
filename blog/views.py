@@ -12,6 +12,7 @@ from django.contrib import messages
 from accstat.visit_info import change_info
 # 引入分页模块
 from django.core.paginator import Paginator
+from accstat.models import VisitNumber, DayNumber
 
 # Create your views here.
 '''
@@ -149,3 +150,11 @@ def archivehtml(request):
     change_info(request, '/')
     post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/archivehtml.html', context={'post_list': post_list})
+
+# 数据统计
+# def stathtml(request):
+#     day_list = DayNumber.objects.all().order_by('-day')
+#     visit_list = VisitNumber.objects.all()
+#     return render(request, context={'day_list': day_list,
+#                                     'visit_list': visit_list}
+#                   )

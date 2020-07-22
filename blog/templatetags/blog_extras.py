@@ -1,18 +1,20 @@
 from django import template
 from django.db.models.aggregates import Count
 from ..models import Post, Category, Tag
-
+from accstat.models import VisitNumber, DayNumber
 
 register = template.Library()
 
-#最新文章模板标签
+
+# 最新文章模板标签
 @register.inclusion_tag('blog/inclusions/_recent_posts.html', takes_context=True)
 def show_recent_posts(context, num=5):
     return {
         'recent_post_list': Post.objects.all().order_by('-created_time')[:num],
     }
 
-#归档模板标签
+
+# 归档模板标签
 @register.inclusion_tag('blog/inclusions/_archives.html', takes_context=True)
 def show_archives(context):
     return {
@@ -20,7 +22,8 @@ def show_archives(context):
 
     }
 
-#分类模板标签
+
+# 分类模板标签
 @register.inclusion_tag('blog/inclusions/_categories.html', takes_context=True)
 def show_categories(context):
     # return {
@@ -33,7 +36,7 @@ def show_categories(context):
     }
 
 
-#标签云模板标签
+# 标签云模板标签
 @register.inclusion_tag('blog/inclusions/_tags.html', takes_context=True)
 def show_tags(context):
     # return {
@@ -45,3 +48,13 @@ def show_tags(context):
         'tag_list': tag_list,
     }
 
+
+# 访问统计标签
+@register.inclusion_tag('blog/inclusions/_stat.html', takes_context=True)
+def show_stat(context):
+    day_list = DayNumber.objects.all().order_by('-day')
+    visit_list = VisitNumber.objects.all()
+    return {
+        'day_list': day_list,
+        'visit_list': visit_list,
+    }
