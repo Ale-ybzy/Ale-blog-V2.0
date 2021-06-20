@@ -158,3 +158,8 @@ def archivehtml(request):
 #     return render(request, context={'day_list': day_list,
 #                                     'visit_list': visit_list}
 #                   )
+
+# 自我简介页面
+def life(request):
+    change_info(request, '/')
+    return render(request, 'blog/life.html')

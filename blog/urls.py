@@ -17,5 +17,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),  #自我简介html页
     path('blogroll/', views.blogroll, name='blogroll'),  #博客推荐html页面
     path('archivehtml/', views.archivehtml, name='archivehtml'),  #归档html页面
-
+    path('life/', views.life, name='life')  #生活漫步页面
 ]
