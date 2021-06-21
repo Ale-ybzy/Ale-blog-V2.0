@@ -1,11 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_extras %}
 
 <!-- 中部body -->
 {% block body %}
 <div class = "content-body">
   <div class="container">
     <div class="row">
+        <main class="scene-left col-md-8">
+          <div class="scene-out">
+          </div>
+          <div class="scene-out">
+          </div>
+           <div class="scene-out">
+          </div>
+           <div class="scene-out">
+          </div>
+
+        </main>
+
+        <aside class="content-right col-md-4">
+            <!-- 最新文章模板标签 -->
+            {% show_recent_posts %}
+            <!-- 归档模板标签 show_archives -->
+            <!-- 分类模板标签 -->
+            {% show_categories %}
+            <!-- 标签模板标签 -->
+            {% show_tags %}
+            <!-- RSS订阅
+            <div class="rss">
+                <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+            </div>
+            -->
+        </aside>
 
     </div>
   </div>

@@ -1613,3 +1613,24 @@ label{
 .archive-ul li ul li ul li a{
     color: darkcyan;
 }
+
+
+/* 生活漫步界面CSS */
+.scene-left {
+    display: inline-block;
+    float: left;
+    width: 835px;
+    background-color: #e6e6e6;
+    position: static;
+}
+
+.scene-out {
+    width: 253px;
+    padding: 16px;
+    color: #333;
+    transition: all 0.3s linear;
+    background: #fff;
+    min-height: 276px;
+    margin: 0 12px 12px 0;
+    display: inline-block;
+}
