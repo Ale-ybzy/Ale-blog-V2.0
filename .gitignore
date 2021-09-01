@@ -4,6 +4,7 @@ blog/__pycache__/
 *.pyc
 backup/
 deploy.py
+docker/
 db.sqlite3
 blogproject/settings.py
 <<<<<<< HEAD

@@ -82,7 +82,6 @@ def archive(request, year, month):
     # post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
-
 # class ArchivesView(ListView):
 #     model = Post
 #     template_name = 'blog/index.html'
@@ -103,7 +102,7 @@ def archive(request, year, month):
 #     post_list = Post.objects.filter(category=cate).order_by('-created_time')
 #     return render(request, 'blog/index.html', context={'post_list': post_list})
 
-
+# 分类页面视图
 class CategoryView(ListView):
     model = Post
     template_name = 'blog/index.html'
@@ -159,7 +158,7 @@ def archivehtml(request):
 #                                     'visit_list': visit_list}
 #                   )
 
-# 自我简介页面
+# 生活漫步界面
 def life(request):
     change_info(request, '/')
     return render(request, 'blog/life.html')

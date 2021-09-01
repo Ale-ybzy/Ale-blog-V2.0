@@ -81,3 +81,29 @@ class Post(models.Model):
     def increase_views(self):
         self.views += 1
         self.save(update_fields=['views'])
+
+# 媒体类
+# class Media(models.Model):
+#     m_title = models.CharField('标题', max_length=100)
+#     m_body = models.TextField('正文')
+#     m_created_time = models.DateTimeField('创建时间', default=timezone.now)
+#     m_modified_time = models.DateTimeField('修改时间')
+#     m_author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE)
+#     m_views = models.PositiveIntegerField(default=0, editable=False)
+#
+#     class Meta:  # model特性由在内部Meta类中定义
+#         verbose_name = '媒体'
+#         verbose_name_plural = verbose_name
+#         ordering = ['-created_time']
+#
+#     def __str__(self):
+#         return self.m_title
+#
+#     # 自定义get_absolute_url方法生成媒体资源的url返回给浏览器
+#     def get_absolute_url(self):
+#         return reverse('blog:detail', kwargs={'pk': self.pk})
+#
+#     # views值递增模型方法
+#     def increase_views(self):
+#         self.views += 1
+#         self.save(update_fields=['views'])

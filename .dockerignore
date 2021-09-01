@@ -3,4 +3,6 @@ fabfile.py
 deploy.py
 *.sqlite3
 venv/
+docker/
+
 

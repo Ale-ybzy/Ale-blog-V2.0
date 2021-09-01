@@ -1,19 +1,36 @@
 version: '3'
+#version 代表 docker-compose.yml 的版本
 
 services:
-  ale_blog_app:
+# 应用镜像
+  blog_app:
+    restart: always
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: ale_blog_app
-    container_name: ale_blog_app_container
+    image: blog_app
+    container_name: blog_app
     working_dir: /my_blog
     volumes:
-      - database_local:/my_blog/database
       - .:/my_blog
     ports:
       - "8000:8000"
     command: /start.sh
+    depends_on:
+      - blog_db
+
+# 数据库镜像
+  blog_db:
+    image: mysql:5.7
+    container_name: blog_db
+    restart: always
+    volumes:
+      - "./compose/local/mysql:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=ale_blog
+      - MYSQL_ROOT_PASSWORD=Wl410078368
 
 
 
