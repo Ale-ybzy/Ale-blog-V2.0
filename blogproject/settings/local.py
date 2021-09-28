@@ -13,9 +13,17 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file' : 'D:\\AleFile\\Python\\Web-Blog\\Ale-blog-2.0\\blogproject\\settings\\my.cnf',
-        },
+        #'ENGINE': 'mysql.connector.django',
+        #'OPTIONS': {
+        #    'read_default_file' : 'D:\\AleFile\\Python\\Web-Blog\\Ale-blog-2.0\\blogproject\\settings\\my.cnf',
+        # },
+        #'HOST': '127.0.0.1',
+        'HOST': 'blog_db',  # 容器名称
+        'NAME': 'ale_blog',  # 数据库名称
+        'USER': 'root',
+        'PASSWORD': 'Wl410078368/*',
+        'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 
 }

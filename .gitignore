@@ -7,6 +7,7 @@ deploy.py
 docker/
 db.sqlite3
 blogproject/settings.py
+compose/local/*
 <<<<<<< HEAD
 =======
 fabfile.py

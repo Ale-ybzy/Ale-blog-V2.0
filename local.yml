@@ -4,33 +4,54 @@ version: '3'
 services:
 # 应用镜像
   blog_app:
+    image: ale_blog
+    container_name: blog_app
     restart: always
+    command: bash -c "sleep 10 && python manage_local.py runserver 0.0.0.0:8000"   #0.0.0.0为启动地址允许所有IP访问，默认是127.0.0.1容器启动的话外部无法访问
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: blog_app
-    container_name: blog_app
-    working_dir: /my_blog
     volumes:
-      - .:/my_blog
+      - ./media:/my_blog/media
+      - ./static:/my_blog/static
+      - ./accstat:/my_blog/accstat
+      - ./blog:/my_blog/blog
+      - ./blogproject:/my_blog/blogproject
+      - ./comments:/my_blog/comments
+      - ./templates:/my_blog/templates
+      - ./userprofile:/my_blog/userprofile
     ports:
       - "8000:8000"
-    command: /start.sh
+    links:    #设置网络联通别名
+      - blog_db:mysql_db
     depends_on:
       - blog_db
+#    networks:   #自定义容器网络环境
+#      - my_net    #网络名称
+
 
 # 数据库镜像
   blog_db:
-    image: mysql:5.7
+    image: ale_mysql
     container_name: blog_db
     restart: always
-    volumes:
-      - "./compose/local/mysql:/var/lib/mysql"
+    build:
+      context: .
+      dockerfile: ./compose/local/mysql/Dockerfile
     ports:
       - "3306:3306"
+    volumes:
+      - ./compose/local/mysql:/opt     #脚本目录
     environment:
-      - MYSQL_DATABASE=ale_blog
-      - MYSQL_ROOT_PASSWORD=Wl410078368
+      - MYSQL_ROOT_PASSWORD=Wl410078368/*
+#      - MYSQL_DATABASE=ale_blog
+#    networks: #自定义容器网络环境
+#      - my_net    #网络名称
+
+#networks:
+#  my_net:
+#    driver: "bridge"   #通过 bridge 驱动创建一个自定义网络 my_net,两容器同属于该自定义网络
+
 
 
 
