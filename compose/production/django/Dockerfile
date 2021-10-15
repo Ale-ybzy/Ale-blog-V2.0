@@ -4,22 +4,14 @@ FROM python:3.6-alpine
 ENV PYTHONUNBUFFERED 1
 #设置环境变量 PYTHONUNBUFFERED=1
 
-RUN apk update \
-  # Pillow dependencies
-  && apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
+# 创建 my_blog 文件夹
+RUN mkdir /my_blog
+# 将 my_blog 文件夹为工作目录
+WORKDIR /my_blog
 
-WORKDIR /MyBlog
-#创建容器项目目录
+# 将当前目录内容加入到工作目录中（. 表示当前目录）
+ADD . /my_blog
 
-
-COPY requirements /MyBlog/requirements
-RUN pip install -r requirements -i https://pypi.douban.com/simple
-#容器内安装项目相关依赖软件
-
-COPY . /MyBlog
-# 复制当前宿主机下的所有目录文件（除dockerignore中指定的）至容器/app目录下
-# 复制启动脚本至容器
-COPY ./compose/production/django/start.sh /start.sh
-
-RUN sed -i 's/\r//' /start.sh
-RUN chmod +x /start.sh
+# 利用 pip 安装依赖（- i 表示指定清华源，默认源下载过慢）
+RUN pip install -r /my_blog/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
+    && pip install gunicorn

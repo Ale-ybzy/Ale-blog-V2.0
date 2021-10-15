@@ -15,8 +15,15 @@ ALLOWED_HOSTS = ['*']  #域名前加点表示允许该域名下的子域名访�
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/home/Ale/etc/my.cnf',
-        },
+        # 'OPTIONS': {
+        #     'read_default_file': '/home/Ale/etc/my.cnf',
+        # },
+        'HOST': 'blog_mysql',  # 容器名称
+        'NAME': 'ale_blog',  # 数据库名称
+        'USER': 'root',
+        'PASSWORD': 'Wl410078368/*',
+        'PORT': '13306',
+        'OPTIONS': {'charset': 'utf8mb4'},
+
     }
 }

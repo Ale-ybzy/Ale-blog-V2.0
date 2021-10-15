@@ -4,7 +4,6 @@ ENV PYTHONUNBUFFERED 1
 
 # 创建 my_blog 文件夹
 RUN mkdir /my_blog
-
 # 将 my_blog 文件夹为工作目录
 WORKDIR /my_blog
 
