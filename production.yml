@@ -2,9 +2,9 @@ version: '3'
 #version 代表 docker-compose.yml 的版本
 
 services:
-  blog_app:
-    image: ale_app
-    container_name: blog_app
+  blog_app_pro:
+    image: ale_app_pro
+    container_name: blog_app_pro
     restart: always
     command: bash ./compose/production/django/start.sh
     build:
@@ -25,13 +25,13 @@ services:
     ports:
       - "8000:8000"
     links:
-      - blog_mysql:blog_mysql
+      - blog_mysql_pro:blog_mysql_pro
     depends_on:
-      - blog_mysql
+      - blog_mysql_pro
 
-  blog_nginx:
-    image: ale_nginx
-    container_name: blog_nginx
+  blog_nginx_pro:
+    image: ale_nginx_pro
+    container_name: blog_nginx_pro
     restart: always
     build:
       context: .
@@ -42,14 +42,14 @@ services:
       - "80:80"
       - "443:443"
     links:
-      - blog_app
+      - blog_app_pro
     depends_on:
-      - blog_app
+      - blog_app_pro
 
 
-  blog_mysql:
-    image: ale_mysql
-    container_name: blog_mysql
+  blog_mysql_pro:
+    image: ale_mysql_pro
+    container_name: blog_mysql_pro
     restart: always
     build:
       contant: .
