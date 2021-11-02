@@ -8,6 +8,6 @@ WORKDIR /docker-entrypoint-initdb.d
 ENV LANG=C.UTF-8
 
 #将当前目录的init.sql文件复制到容器中的以上目录中,init脚本专门用来控制执行sql顺序的，此目录放置多个sql文件的话执行顺序无法保证容易出错
-ADD ./compose/local/mysql/init.sql /docker-entrypoint-initdb.d
+ADD ./compose/production/mysql/init.sql /docker-entrypoint-initdb.d
 
 

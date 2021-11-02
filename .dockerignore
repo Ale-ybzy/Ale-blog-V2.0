@@ -4,6 +4,6 @@ deploy.py
 *.sqlite3
 venv/
 docker/
-compose/production/*
+
 
 

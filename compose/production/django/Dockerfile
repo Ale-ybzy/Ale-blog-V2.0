@@ -13,5 +13,4 @@ WORKDIR /my_blog
 ADD . /my_blog
 
 # 利用 pip 安装依赖（- i 表示指定清华源，默认源下载过慢）
-RUN pip install -r /my_blog/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
-&& pip install gunicorn
+RUN pip install -r /my_blog/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/ && pip install gunicorn

@@ -12,22 +12,26 @@ services:
       # '点'代表当前目录
       dockerfile: ./compose/production/django/Dockerfile
     volumes:
-      - ./media:/my_blog/media
-      - ./static:/my_blog/static
       - ./accstat:/my_blog/accstat
       - ./blog:/my_blog/blog
       - ./blogproject:/my_blog/blogproject
       - ./comments:/my_blog/comments
       - ./templates:/my_blog/templates
       - ./userprofile:/my_blog/userprofile
+      - ./media:/media
+      - ./static:/static
     # "static" 表示宿主机的static目录，":" 为分隔符，"/app/static" 表示容器中的目录。
     #即宿主机目录和容器目录建立连通关系，宿主机目录的 Django 代码更新时，容器中的目录中的代码也相应的更新了。
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
+    # expose 表示将端口暴露给其他容器，但不暴露给主机（不同容器默认相互隔离）
     links:
-      - blog_mysql_pro:blog_mysql_pro
+      - blog_mysql_pro
     depends_on:
       - blog_mysql_pro
+    #后台运行配置参数，保证bash命令运行后自动不退出
+    stdin_open: true
+    tty: true
 
   blog_nginx_pro:
     image: ale_nginx_pro
@@ -36,28 +40,28 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/nginx/Dockerfile
-#    volumes:
-#      - static:/app/static
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ./media:/media
+      - ./static:/static
     links:
       - blog_app_pro
     depends_on:
       - blog_app_pro
-
 
   blog_mysql_pro:
     image: ale_mysql_pro
     container_name: blog_mysql_pro
     restart: always
     build:
-      contant: .
+      context: .
       dockerfile: ./compose/production/mysql/Dockerfile
     volumes:
-      - ./production/mysql:/opt     #脚本目录
+      - ./compose/production/mysql:/opt     #脚本目录
     ports:
-      - "13306:13306"
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=Wl410078368/*
 #      - MYSQL_DATABASE=ale_blog
