@@ -4,21 +4,14 @@ blog/__pycache__/
 *.pyc
 backup/
 deploy.py
-docker/
 db.sqlite3
-blogproject/settings.py
 compose/local/*
-<<<<<<< HEAD
-=======
 fabfile.py
 deploy.py
->>>>>>> docker
 _credentials.py
 Pipfile
 Pipfile.lock
-<<<<<<< HEAD
 media/
-compose/production/mysql/database/*
-=======
-media/
->>>>>>> 07bf40648b76216bd269c6431b9ca940889b3234
+static/
+
+
