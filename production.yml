@@ -62,6 +62,3 @@ services:
       - ./compose/production/mysql:/opt     #脚本目录
     ports:
       - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=Wl410078368/*
-#      - MYSQL_DATABASE=ale_blog

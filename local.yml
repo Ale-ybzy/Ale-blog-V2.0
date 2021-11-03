@@ -42,15 +42,7 @@ services:
       - "3306:3306"
     volumes:
       - ./compose/local/mysql:/opt     #脚本目录
-    environment:
-      - MYSQL_ROOT_PASSWORD=Wl410078368/*
-#      - MYSQL_DATABASE=ale_blog
-#    networks: #自定义容器网络环境
-#      - my_net    #网络名称
 
-#networks:
-#  my_net:
-#    driver: "bridge"   #通过 bridge 驱动创建一个自定义网络 my_net,两容器同属于该自定义网络
 
 
 
