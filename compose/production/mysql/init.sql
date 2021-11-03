@@ -1,2 +1,2 @@
-source /opt/init_st.sql;
+source /opt/init_in.sql;
 source /opt/ale_blog.sql;

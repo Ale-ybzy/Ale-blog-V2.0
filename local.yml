@@ -42,7 +42,9 @@ services:
       - "3306:3306"
     volumes:
       - ./compose/local/mysql:/opt     #脚本目录
-
+    environment:
+      - MYSQL_DATABASE=ale_blog # 数据库名称
+      - MYSQL_ROOT_PASSWORD=Wl410078368/* # 数据库密码
 
 
 
