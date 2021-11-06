@@ -18,7 +18,7 @@ DATABASES = {
         #    'read_default_file' : 'D:\\AleFile\\Python\\Web-Blog\\Ale-blog-2.0\\blogproject\\settings\\my.cnf',
         # },
         #'HOST': '127.0.0.1',
-        'HOST': 'blog_db',  # 容器名称
+        'HOST': 'blog_mysql',  # 容器名称
         'NAME': 'ale_blog',  # 数据库名称
         'USER': 'root',
         'PASSWORD': 'Wl410078368/*',
