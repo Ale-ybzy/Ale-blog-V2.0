@@ -13,7 +13,7 @@ Pipfile
 Pipfile.lock
 media/
 static/
-mysql/
+mysqlfiles/
 local.yml
 README.md
 
