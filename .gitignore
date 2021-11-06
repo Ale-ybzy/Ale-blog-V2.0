@@ -13,5 +13,6 @@ Pipfile
 Pipfile.lock
 media/
 static/
+mysql/
 
 

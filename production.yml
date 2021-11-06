@@ -59,7 +59,8 @@ services:
       context: .
       dockerfile: ./compose/production/mysql/Dockerfile
     volumes:
-      - ./compose/production/mysql:/opt     #脚本目录
+      - ./compose/production/mysql:/opt  #脚本目录
+      - ./mysql:/var/lib/mysql  # 挂载数据库数据
     ports:
       - "3306:3306"
     environment:
