@@ -14,5 +14,7 @@ Pipfile.lock
 media/
 static/
 mysql/
+local.yml
+README.md
 
 
