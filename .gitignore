@@ -12,7 +12,7 @@ _credentials.py
 Pipfile
 Pipfile.lock
 media/
-static/
+collected_static/
 mysqlfiles/
 local.yml
 README.md

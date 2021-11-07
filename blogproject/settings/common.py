@@ -141,12 +141,13 @@ USE_TZ = False
 
 #静态文件路径
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 
 #图片上传路径
 MEDIA_URL = '/media/'
 # 放在django项目根目录，同时也需要创建media文件夹
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_FORCE_JPEG_COMPRESSION = True
