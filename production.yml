@@ -19,7 +19,7 @@ services:
       - ./templates:/my_blog/templates
       - ./userprofile:/my_blog/userprofile
       - ./media:/my_blog/media
-      - ./static:/my_blog/static
+      - ./collected_static:/my_blog/collected_static
     # "static" 表示宿主机的static目录，":" 为分隔符，"/app/static" 表示容器中的目录。
     #即宿主机目录和容器目录建立连通关系，宿主机目录的 Django 代码更新时，容器中的目录中的代码也相应的更新了。
     expose:
@@ -45,7 +45,7 @@ services:
       - "443:443"
     volumes:
       - ./media:/media
-      - ./static:/static
+      - ./collected_static:/collected_static
     links:
       - blog_app_pro
     depends_on:
