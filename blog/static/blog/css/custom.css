@@ -83,6 +83,7 @@ body {
     font-size: 1.25em;
     background-color:#fff;
     color: #444;
+    height: 100%;
 }
 
 p {
@@ -186,7 +187,7 @@ img {
     font-family: STXingkai;
     line-height: 1.6;
     font-weight: 400;
-    letter-spacing: 1.25;
+    letter-spacing: 1.25px;
 
 }
 
@@ -229,7 +230,7 @@ img {
 
 .main-nav a {
     color: #999;
-    padding: 2 0 5px 0 !important;
+    padding: 2px 0 5px 0 !important;
     margin-right: 30px;
     font-family: STXingkai;
     font-weight: 300;
@@ -399,6 +400,7 @@ img {
 .content-body {
     padding-top:78px;
     background-color: #e6e6e6;
+    min-height: 100%;
 }
 
 .container {
@@ -746,7 +748,7 @@ img {
 
 .widget-title {
     margin-bottom: 10px;
-    padding: 0 0 0 15;
+    padding: 0 0 0 15px;
     font-size: 1.9199999rem;
     line-height: 1.2;
     font-weight: normal;
@@ -754,8 +756,8 @@ img {
 }
 
 .widget-recent-posts ul {
-    padding: 5;
-    margin: 10;
+    padding: 5px;
+    margin: 10px;
 }
 
 .widget-recent-posts ul li {
@@ -787,8 +789,8 @@ img {
 }*/
 
 .widget-archives ul {
-    padding: 5;
-    margin: 10;
+    padding: 5px;
+    margin: 10px;
 }
 
 .widget-archives ul li {
@@ -816,8 +818,8 @@ img {
 }*/
 
 .widget-category ul {
-    padding: 5;
-    margin: 10;
+    padding: 5px;
+    margin: 10px;
 }
 
 .widget-category ul li {
@@ -848,8 +850,8 @@ img {
 }*/
 
 .widget-tag-cloud ul {
-    padding: 5;
-    margin: 10;
+    padding: 5px;
+    margin: 10px;
     margin-right: -10px;
 }
 
@@ -1470,9 +1472,9 @@ label{
 }
 
 .list1,.list2,.list3{
-    font-size:16px;
-    margin-top:4px;
-    text-indent:4;
+    font-size: 16px;
+    margin-top: 4px;
+    text-indent: 4px;
     font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
 
 }
@@ -1518,6 +1520,7 @@ label{
     height:566px;
     width:100%;
     background-color: #e6e6e6!important;
+    min-height: 100%;
 }
 
 .blogroll-box{

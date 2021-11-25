@@ -180,9 +180,9 @@ CKEDITOR_CONFIGS = {
             # 最大化
             ['Maximize'],
             # 图片
-            ['Image'],
+            ['Image', 'Html5video'],
         ],
         # 加入代码块插件
-        'extraPlugins': ','.join(['codesnippet']),
+        'extraPlugins': ','.join(['codesnippet', 'html5video']),
     }
 }
