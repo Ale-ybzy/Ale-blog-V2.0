@@ -4,6 +4,10 @@ deploy.py
 *.sqlite3
 venv/
 docker/
+.gitignore
+.gitattributes
+local.yml
+production.yml
 
 
 

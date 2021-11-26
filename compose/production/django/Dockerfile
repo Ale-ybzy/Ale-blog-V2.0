@@ -14,3 +14,9 @@ ADD . /my_blog
 
 # 利用 pip 安装依赖（- i 表示指定清华源，默认源下载过慢）
 RUN pip install -r /my_blog/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/ && pip install gunicorn
+
+# 复制插件到固定路径
+RUN mv /my_blog/plugins/html5video /usr/local/lib/python3.6/site-packages/ckeditor/static/ckeditor/ckeditor/plugins/
+# 配置视频上传
+RUN rm /usr/local/lib/python3.6/site-packages/ckeditor/static/ckeditor/ckeditor/config.js
+COPY ./compose/production/django/config.js /usr/local/lib/python3.6/site-packages/ckeditor/static/ckeditor/ckeditor/config.js
