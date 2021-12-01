@@ -57,6 +57,7 @@ var _hmt = _hmt || [];
 
 <body>
 <!--头部及导航栏-->
+ <div id="wrapper">
 <div class="head-navbar">
     <div id="site-header">
         <div class="external">
@@ -73,7 +74,7 @@ var _hmt = _hmt || [];
                         <a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
                         <a href="{% url 'blog:archivehtml' %}" data-hover="归档">归档</a></li>
                         <a href="{% url 'blog:life' %}" data-hover="生活漫步">生活漫步</a></li>
-<!--                        <a href="history.html" data-hover="碎碎念">碎碎念</a></li>-->
+                        <a href="{% url 'blog:say_something' %}" data-hover="碎碎念">碎碎念</a></li>
                     </div>
                 </nav>
             </div>
@@ -140,8 +141,6 @@ var _hmt = _hmt || [];
 
 <!--底部-->
 <footer class="footer-box">
-    <div class="white">
-    </div>
     <div class="footer-nav">
         <nav><a href="{% url 'blog:about' %}" target="_blank">自我简述</a>
 <!--            <span class="pipe">|</span> <a href="#" target="_blank">小站留印</a> -->
@@ -168,7 +167,7 @@ var _hmt = _hmt || [];
         </p>
     </div>
 </footer>
-
+ </div>
 <!-- Mobile Menu -->
 <!--
 <div class="overlay overlay-hugeinc">

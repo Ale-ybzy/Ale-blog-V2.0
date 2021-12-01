@@ -61,6 +61,7 @@ services:
     volumes:
       - ./compose/production/mysql:/opt  #脚本目录
       - ./mysqlfiles:/var/lib/mysql  # 挂载数据库数据
+      - ./compose/production/mysql/my.cnf:/etc/mysql/my.cnf  #挂在配置文件
     ports:
       - "3306:3306"
     environment:

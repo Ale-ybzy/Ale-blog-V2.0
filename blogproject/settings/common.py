@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 #
 # # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-#
+# 1. 检测代码改动后，立刻重启服务
+# 2. 提供有好的报错页面给与分析提示
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.ybzb.online'] #域名前加点表示允许该域名下的子域名访问
 #
 
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# 主路由文件
 ROOT_URLCONF = 'blogproject.urls'
 
 TEMPLATES = [

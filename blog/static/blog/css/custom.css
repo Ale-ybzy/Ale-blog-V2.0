@@ -400,14 +400,13 @@ img {
 .content-body {
     padding-top:78px;
     background-color: #e6e6e6;
-    min-height: 100%;
+    padding-bottom: 85px;
 }
 
 .container {
     margin: 0 auto;
     width:1166px;
-    overflow: hidden;
-    /*
+    /*    overflow: hidden;
     height: auto!important; */
     min-height: auto;
 }
@@ -574,29 +573,17 @@ img {
 /**
  * 6.0 - Footer
  */
-.footer-box{
-    clear:both;
-    margin:0 auto;
+.footer-box {
     background-color: #fff;
-    box-shadow: 0 2px 6px rgba(100,100,100,0.3);
-/*    border-top:1px solid #E8E8E8;
-    padding:15px 0;
-    font-family:tahoma,Arial;
-    font-size:14px;
-    color:#999;
-    line-height:22px;
-    text-align:center  */
-    }
-
-.white{
-    height:15px;
-    background-color:#e6e6e6;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height: 70px;
 }
 
 .footer-nav{
-    padding-top: 10px;
     text-align: center;
-    margin-button:2px;
+    margin-top: 8px;
 }
 
 .footer-nav2{
@@ -618,7 +605,6 @@ img {
     letter-spacing:0.1px;
     color:#444;
     margin:0 0;
-    margin-button:2px;
 }
 .footer-nav2 a{
     letter-spacing:0.1px;
@@ -1290,12 +1276,12 @@ label{
 .login-body{
     padding-top:72px;
     background-color: #e6e6e6;
-    height:685px;
+    padding-bottom: 75px;
 }
 .login-container{
     overflow:auto!important;
     width:800px;
-    height:500px;
+    height:550px;
     margin-top:25px;
     background-color:#fff;
     box-shadow: 0 2px 6px rgba(100,100,100,0.3);
@@ -1414,16 +1400,14 @@ label{
 /*** About me page css ***/
 .about-body{
     padding-top: 78px;
-    height:1250px;
-    width:100%;
-    background-color: #e6e6e6!important;
+    height:1320px;
+    background-color: #e6e6e6 !important
 }
 
 .about-box{
     position:absolute;
     display:inline-block;
-    width:888px;
-    height:1150px;
+    width:1000px;
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(100,100,100,0.3);
     left:0;
@@ -1468,7 +1452,8 @@ label{
 
 .ale{
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
-    margin-top:21px;
+    margin-top:28px;
+    font-size: 25px;
 }
 
 .list1,.list2,.list3{
@@ -1517,17 +1502,13 @@ label{
 /*** blogroll page css ***/
 .blogroll-body{
     padding-top: 78px;
-    height:566px;
-    width:100%;
     background-color: #e6e6e6!important;
     min-height: 100%;
 }
 
 .blogroll-box{
     position:absolute;
-    display:inline-block;
     width:1000px;
-    height:460px;
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(100,100,100,0.3);
     left:0;
@@ -1677,4 +1658,42 @@ label{
     display: inline-block;
     width: 222px;
     position: absolute;
+}
+
+/* 碎碎念界面CSS */
+.talk:not(:last-child) {
+    padding: 30px 20px 10px;
+    border-bottom: 1px #ccc dashed;
+}
+
+.talk-header{
+
+}
+
+.talk-meta {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.talk-author{
+    color: #333;
+    width: 222px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.talk-text{
+    color: #333;
+    width: 222px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.talk-date{
+    font-size: 14px;
+}
+
+#wrapper{
+  min-height:100%;
+  position:relative;
 }

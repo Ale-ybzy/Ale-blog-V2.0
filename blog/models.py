@@ -6,9 +6,9 @@ import markdown
 from django.utils.html import strip_tags
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
 
 
-# Create your models here.
 # 分类类
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -20,7 +20,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
 # 标签类
 class Tag(models.Model):
     name = models.CharField(max_length=100)
@@ -31,7 +30,6 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
-
 
 # 文章类
 class Post(models.Model):
@@ -107,3 +105,18 @@ class Post(models.Model):
 #     def increase_views(self):
 #         self.views += 1
 #         self.save(update_fields=['views'])
+
+# 碎碎念类
+class Talk(models.Model):
+    text = RichTextField('内容')
+    created_time = models.DateTimeField('创建时间', default=timezone.now)
+    name = models.ForeignKey(User, verbose_name='', on_delete=models.CASCADE)
+
+    class Meta:  # model特性由在内部Meta类中定义
+        verbose_name = '碎碎念'
+        verbose_name_plural = verbose_name
+        ordering = ['-created_time']
+
+    #该函数可以让显示的数据更为直观
+    def __str__(self):
+        return '{}: {}'.format(self.name, self.text[:20])

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load blog_extras %}
+
+{% block body %}
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <main class="content-left col-md-8">
+                {% for talk in talk_list %}
+                <article class="talk">
+                    <header class="talk-header">
+                        <div class="talk-meta">
+                            <span class="talk-author"><a href="#">{{ talk.name }}</a></span>
+                            <div class="talk-text">
+                                {{ talk.text|safe }}
+                            </div>
+                            <span class="talk-date">
+                                <a ><time class="entry-date" datetime="{{ talk.created_time }}">
+                                    {{ talk.created_time }}</time></a></span>
+                        </div>
+                    </header>
+                </article>
+
+                {% empty %}
+                <div class="no-post">暂时还没有发布的说说！</div>
+                {% endfor %}
+
+                {% if is_paginated %}
+                <div class="pagination-simple">
+                    <!-- 如果当前页还有上一页，显示一个上一页的按钮 -->
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+                    {% endif %}
+                    <!-- 显示当前页面信息 -->
+                    <span class="current">第 {{ page_obj.number }} 页 / 共 {{ paginator.num_pages }} 页</span>
+                    <!-- 如果当前页还有下一页，显示一个下一页的按钮 -->
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">下一页</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </main>
+
+            <aside class="content-right col-md-4">
+                <!-- 最新文章模板标签 -->
+                {% show_recent_posts %}
+                <!-- 归档模板标签 show_archives -->
+                <!-- 分类模板标签 -->
+                {% show_categories %}
+                <!-- 标签模板标签 -->
+                {% show_tags %}
+
+                {% show_stat %}
+                <!-- RSS订阅
+                <div class="rss">
+                    <a href=""><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                </div>
+                -->
+            </aside>
+
+        </div>
+    </div>
+</div>
+{% endblock body %}

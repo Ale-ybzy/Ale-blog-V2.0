@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, Talk
 
 
 @admin.register(Post)
@@ -16,3 +16,4 @@ class PostAdmin(admin.ModelAdmin):
 #模型注册，models中的数据库模型只有在admin文件中注册才能在django后台显示
 admin.site.register(Category)
 admin.site.register(Tag)
+admin.site.register(Talk)

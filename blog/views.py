@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.http import request
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, Talk
 import markdown
 from markdown.extensions.toc import TocExtension
 import re
@@ -141,7 +141,7 @@ def about(request):
 
 # 友情链接界面
 def blogroll(request):
-    change_info(request, '/')
+    change_info(request, '/')  #网站访问量记录函数
     return render(request, 'blog/blogroll.html')
 
 # 归档页面
@@ -162,3 +162,10 @@ def archivehtml(request):
 def life(request):
     change_info(request, '/')
     return render(request, 'blog/life.html')
+
+class Say_somethingView(ListView):
+    model = Talk
+    template_name = 'blog/say_something.html'
+    context_object_name = 'talk_list'
+    # 指定 paginate_by 属性后开启分页功能，其值代表每一页包含多少篇文章
+    paginate_by = 10
