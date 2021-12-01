@@ -16,5 +16,6 @@ collected_static/
 mysqlfiles/
 local.yml
 README.md
+manage_local.py
 
 

@@ -1343,7 +1343,7 @@ label{
 .nav-link-name {
     top: 0px;
     margin-right:2px;
-    font-family: STXingkai;
+    font-family: fantasy;
     color:#999;
     font-size: 20px;
 }
@@ -1690,6 +1690,11 @@ label{
 }
 
 .talk-date{
+    font-size: 14px;
+}
+
+.no-content{
+    margin: 10px;
     font-size: 14px;
 }
 
