@@ -1662,12 +1662,11 @@ label{
 
 /* 碎碎念界面CSS */
 .talk:not(:last-child) {
-    padding: 30px 20px 10px;
     border-bottom: 1px #ccc dashed;
 }
 
 .talk-header{
-
+    margin: 18px 18px;
 }
 
 .talk-meta {
@@ -1686,6 +1685,11 @@ label{
     color: #333;
     font-size: 18px;
     line-height: 24px;
+    border: 1px #8a6d3b dashed;
+}
+
+.talk-text p{
+    margin: 12px;
 }
 
 .talk-date{
