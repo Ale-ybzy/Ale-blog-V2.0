@@ -27,7 +27,7 @@ mysql-connector-python==8.0.26
 mysqlclient==1.4.5
 npm==0.1.1
 optional-django==0.1.0
-paramiko==2.6.0
+paramiko==2.10.1
 Pillow==6.2.1
 protobuf==3.17.3
 pycparser==2.19
