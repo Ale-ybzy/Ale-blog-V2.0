@@ -29,7 +29,7 @@ npm==0.1.1
 optional-django==0.1.0
 paramiko==2.6.0
 Pillow==6.2.1
-protobuf==3.17.3
+protobuf==3.18.3
 pycparser==2.19
 Pygments==2.4.2
 pymssql==2.1.4
